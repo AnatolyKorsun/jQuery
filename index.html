@@ -108,18 +108,355 @@
         </div>
       </div>
     </section>
-<section>
-    <div class="container">
+    <section>
+      <div class="container">
         <div class="row">
-            <div class="col-md-12 text-left">
-                <h2>Фильтры</h2>
+          <div class="col-md-12 text-left">
+            <h2>Фильтры</h2>
+            <ul>
+              <li>
                 <h3>:focus</h3>
-                <input name="name" type="text">
+              </li>
+              <li>
+                <h3>:first</h3>
+              </li>
+              <li>
+                <h3>:last</h3>
+              </li>
+              <li>
+                <h3>:eq(0)</h3>
+                <p>под заданым номером</p>
+              </li>
+              <li>
+                <h3>input:not(input:eq(2))</h3>
+                <p>все кроме второго</p>
+              </li>
+              <li>
+                <h3>:even</h3>
+                <p>четные</p>
+              </li>
+              <li>
+                <h3>:gt(-2)</h3>
+                <p>елементы превышающие п с конца</p>
+              </li>
+              <li>
+                <h3>:odd</h3>
+                <p>нечетные</p>
+              </li>
+              <li>
+                <h3>:lt(n)</h3>
+                <p>елементы ниже п</p>
+              </li>
+              <li>
+                <h3>:header</h3>
+              </li>
 
-            </div>
+              <li>
+                <p>h1-...</p>
+              </li>
+              <li>
+                <h3>:hidden</h3>
+              </li>
+              <li>
+                <h3>:visible</h3>
+              </li>
+              <li>
+                <h3>:lang(language)</h3>
+                <p>в которых указан язык</p>
+              </li>
+              <li>
+                <h3>:root</h3>
+                <p>корневые елементы документа</p>
+              </li>
+            </ul>
+            <input name="name" type="text" />
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-left">
+            <h2>Фильтры дочерних елементов</h2>
+            <ul>
+              <li>
+                <h3>:first-child</h3>
+                <p>Первый дочерний елемент</p>
+              </li>
+              <li>
+                <h3>:last-child</h3>
+                <p>Последний дочерний елемент</p>
+              </li>
+              <li>
+                <h3>:nth-child()</h3>
+                <p>с номером</p>
+              </li>
+              <li>
+                <h3>:nth-child-last()</h3>
+                <p>четние нечетние под определенным инд</p>
+              </li>
+              <li>
+                <h3>:only-child</h3>
+                <p>единственный потомок</p>
+              </li>
+              <li>
+                <h3>:only-of-type</h3>
+                <p>единственный потомки по селектору</p>
+              </li>
+              <li>
+                <h3>:first-of-type</h3>
+                <p>первый потомок по селектору</p>
+              </li>
+              <li>
+                <h3>:last-of-type</h3>
+                <p>последний потомок по селектору</p>
+              </li>
+              <li>
+                <h3>:nth-last-of-type</h3>
+                <h3>:nth-first-of-type</h3>
+                <p>
+                  дочерние елементы заданого селектора сопределенный порядком
+                </p>
+              </li>
+            </ul>
+            <input name="name" type="text" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-right">
+            <h2>Фильтры елементов форм</h2>
+            <ul>
+              <li>
+                <h3>:button</h3>
+                <p>с тегом или типом</p>
+              </li>
+              <li>
+                <h3>:radio</h3>
+                <p>радио кнопки</p>
+              </li>
+              <li>
+                <h3>:checkbox</h3>
+                <p>чекбоксы</p>
+              </li>
+              <li>
+                <h3>:text</h3>
+                <p>текстовые поля</p>
+              </li>
+              <li>
+                <h3>:password</h3>
+                <p>пароли</p>
+              </li>
+              <li>
+                <h3>:file</h3>
+                <p>поля загрузки файлов</p>
+              </li>
+              <li>
+                <h3>:submit</h3>
+                <p>кнопки отправки формы</p>
+              </li>
+              <li>
+                <h3>:reset</h3>
+                <p>кнопки очистки формы</p>
+              </li>
+              <li>
+                <h3>:image</h3>
+                <p>
+                  изображение для отправки формы type=image
+                </p>
+              </li>
+              <li>
+                <h3>:input</h3>
+                <p>елемент формы</p>
+              </li>
+              <li>
+                <h3>:selected</h3>
+                <p>выбранные елементы</p>
+              </li>
+              <li>
+                <h3>:focus</h3>
+                <p>в фокусе</p>
+              </li>
+              <li>
+                <h3>:checked</h3>
+                <p>выбранные</p>
+              </li>
+              <li>
+                <h3>:enable</h3>
+                <p>
+                  активные елементы формы
+                </p>
+              </li>
+              <li>
+                <h3>:disabled</h3>
+                <p>
+                  неактивные елементы формы
+                </p>
+              </li>
+            </ul>
+            <input name="name" type="text" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Работа с атрибутами</h2>
+            <a href="https://api.jquery.com/category/attributes/"
+              >https://api.jquery.com/category/attributes/</a
+            >
+            <ul>
+              <li>
+                <h3 class="atr" id="id-atr">.attr('id')</h3>
+                <p>возвращает /изменяет значение атрибута id</p>
+                <a href="#" onclick="changeAtr()">Заменить атрибут</a>
+              </li>
+              <li>
+                <h3>removeAttr('id')</h3>
+                <p>удаляет атрибут выбраныых елементов</p>
+                <img
+                  class="remove-atr"
+                  src="./images/06_timelineimg2.png"
+                  width="100px"
+                  height="100px"
+                  alt=""
+                />
+                <a href="#remove" id="remove" onclick="removeAtr()"
+                  >removeAtr</a
+                >
+              </li>
+              <li>
+                <h3>hasClass()</h3>
+                <p>проверяет наличие класса</p>
+                <a
+                  href="#hasClass"
+                  id="hasClass"
+                  class="redClass"
+                  onclick="hasClass()"
+                  >hasClass</a
+                >
+              </li>
+              <li>
+                <h3>addClass()</h3>
+                <p>добавляет класс</p>
+                <a href="#addClass" id="addClass" onclick="addClass()"
+                  >addClass greenClass</a
+                >
+              </li>
+
+              <li>
+                <h3>removeClass()</h3>
+                <p>удалить класс</p>
+                <a
+                  href="#removeClass"
+                  id="removeClass"
+                  class="greenClass"
+                  onclick="removeClass()"
+                  >removeClass greenClass</a
+                >
+              </li>
+              <li>
+                <h3>taggleClass()</h3>
+                <p>тоглит класс</p>
+                <a href="#toggleClass" id="toggleClass" onclick="toggleClass()"
+                  >toggleClass greenClass</a
+                >
+              </li>
+              <li>
+                <h3>val()</h3>
+                <p>возвращает / изменяет значение атрибута value</p>
+                <a href="#val" id="val" onclick="val()">value hello</a>
+                <input type="text" name="name" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2>Работа с параметрами и стилями</h2>
+              <a href="https://api.jquery.com/category/css/"
+                >https://api.jquery.com/category/css/</a
+              >
+              <ul>
+                <li>
+                  <h3 class="" id="css">.css({'width',100})</h3>
+                  <p>возвращает /изменяет css параметры</p>
+                  <a href="#css" onclick="css()">Заменить возвратить css</a>
+                </li>
+                <li>
+                  <h3>removeAttr('id')</h3>
+                  <p>удаляет атрибут выбраныых елементов</p>
+                  <img
+                    class="remove-atr"
+                    src="./images/06_timelineimg2.png"
+                    width="100px"
+                    height="100px"
+                    alt=""
+                  />
+                  <a href="#remove" id="remove" onclick="removeAtr()"
+                    >removeAtr</a
+                  >
+                </li>
+                <li>
+                  <h3>hasClass()</h3>
+                  <p>проверяет наличие класса</p>
+                  <a
+                    href="#hasClass"
+                    id="hasClass"
+                    class="redClass"
+                    onclick="hasClass()"
+                    >hasClass</a
+                  >
+                </li>
+                <li>
+                  <h3>addClass()</h3>
+                  <p>добавляет класс</p>
+                  <a href="#addClass" id="addClass" onclick="addClass()"
+                    >addClass greenClass</a
+                  >
+                </li>
+  
+                <li>
+                  <h3>removeClass()</h3>
+                  <p>удалить класс</p>
+                  <a
+                    href="#removeClass"
+                    id="removeClass"
+                    class="greenClass"
+                    onclick="removeClass()"
+                    >removeClass greenClass</a
+                  >
+                </li>
+                <li>
+                  <h3>taggleClass()</h3>
+                  <p>тоглит класс</p>
+                  <a href="#toggleClass" id="toggleClass" onclick="toggleClass()"
+                    >toggleClass greenClass</a
+                  >
+                </li>
+                <li>
+                  <h3>val()</h3>
+                  <p>возвращает / изменяет значение атрибута value</p>
+                  <a href="#val" id="val" onclick="val()">value hello</a>
+                  <input type="text" name="name" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+
     <section>
       <div class="container">
         <div class="row">
