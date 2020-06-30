@@ -380,76 +380,272 @@
       </div>
     </section>
     <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Работа с параметрами и стилями</h2>
+            <a href="https://api.jquery.com/category/css/"
+              >https://api.jquery.com/category/css/</a
+            >
+            <ul>
+              <li>
+                <h3 class="" id="css">.css({'width',100})</h3>
+                <p>возвращает /изменяет css параметры</p>
+                <a href="#css" onclick="css()">Заменить возвратить css</a>
+              </li>
+              <li>
+                <h3>height()</h3>
+
+                <h3>outerHeight()</h3>
+                <p>возвращает /изменяет высоту</p>
+                <img
+                  src="./images/06_timelineimg2.png"
+                  id="height"
+                  alt=" "
+                  width="100"
+                  height="100"
+                />
+                <a href="#height" onclick="height()">height</a>
+              </li>
+
+              <li>
+                <h3>innerHeight()</h3>
+                <p>возвращает /изменяет высоту c padding с рамкою</p>
+                <a
+                  href="#innerHeight"
+                  id="innerHeight"
+                  class="innerHeight"
+                  onclick="innerHeight()"
+                  >innerHeight</a
+                >
+              </li>
+              <li>
+                <h3>outerHeight()</h3>
+                <p>возвращает /изменяет высоту c margin</p>
+                <a
+                  href="#outerHeight"
+                  id="outerHeight"
+                  class="outerHeight"
+                  onclick="outerHeight()"
+                  >outerHeight</a
+                >
+              </li>
+
+              <li>
+                <h3>width()</h3>
+                <p>возвращает /изменяет ширину</p>
+                <a href="#width" id="width" class="width" onclick="width()"
+                  >width</a
+                >
+              </li>
+              <li>
+                <h3>innerWidth()</h3>
+                <p>возвращает /изменяет внутриннюю ширину</p>
+                <a
+                  href="#innerWidth"
+                  id="innerWidth"
+                  class="innerWidth"
+                  onclick="innerWidth()"
+                  >innerWidth</a
+                >
+              </li>
+              <li>
+                <h3>outerWidth()</h3>
+                <p>возвращает /изменяет ширину с margin</p>
+                <a
+                  href="#outerWidth"
+                  id="outerWidth"
+                  class="outerWidth"
+                  onclick="outerWidth()"
+                  >outerWidth</a
+                >
+              </li>
+              <li>
+                <h3>outerWidth()</h3>
+                <p>возвращает /изменяет ширину с margin</p>
+                <a
+                  href="#outerWidth"
+                  id="outerWidth"
+                  class="outerWidth"
+                  onclick="outerWidth()"
+                  >outerWidth</a
+                >
+              </li>
+              <li>
+                <h3>offset()</h3>
+                <p>показывает положение на стр. ИЗМЕНЯЕТ ПОЛОЖЕНИЕ</p>
+                <a href="#offset" id="offset" class="offset" onclick="offset()"
+                  >offset</a
+                >
+              </li>
+              <li>
+                <h3>position()</h3>
+                <p>
+                  показывает положение на стр. относительно ближайшего родителя
+                  с позицией abs,...
+                </p>
+                <a
+                  href="#position"
+                  id="position"
+                  class="position"
+                  onclick="position()"
+                  >position</a
+                >
+              </li>
+              <li>
+                <h3>scrollTop()</h3>
+                <p>показывает / меняет величину скроллинга положение на стр.</p>
+                <a href="" id="scrollTop" class="scrollTop" onclick="scrolTop()"
+                  >scrollTop</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section >
+      <div class="container">
+        <div class="row">
+          <div id="manipulation" class="col-md-12 text-left">
+            <h2>Манипуляция обьектами Добавление содержимого</h2>
+            <a href="https://api.jquery.com/category/manipulation/"
+              >https://api.jquery.com/category/manipulation/</a
+            >
+            <ul>
+              <li id="html">
+                <h3 class="html">.html()</h3>
+                <p>вернет /изменяет html</p>
+                <a href="#html" onclick="html()">.html()</a>
+              </li>
+              <li >
+                <h3 >.text()</h3>
+                <p>вернет /изменяет содержимое тега</p>
+                <a href="#text" class="text" id="text" onclick="tex()">.text()</a>
+              </li>
+              <li class="append" >
+                <h3 >.append()</h3>
+                <p>добавит в конец стр</p>
+                <a href="#append" class="append" id="append" onclick="append()">.append()</a>
+              </li>
+              <li class="appendTo">
+                <h3 >.appendTo()</h3>
+                <p>добавит в конец стр</p>
+                <a href="#appendTo"  id="appendTo" onclick="appendTo()">.appendTo()</a>
+              </li>
+              <li class="prepend">
+                <h3 >.prepend()</h3>
+                <p>добавит в начало стр</p>
+                <a href="#prepend"  id="prepend" onclick="prepend()">.prepend()</a>
+              </li>
+              <li class="after">
+                <h3 >.after()</h3>
+                <p>добавит после елемента на стр</p>
+                <a href="#after"  id="after" onclick="after()">.after()</a>
+              </li>
+              <li class="insertAfter">
+                <h3 >.insertAfter()</h3>
+                <p>добавит после елемента на стр</p>
+                <a href="#insertAfter"  id="insertAfter" onclick="insertAfte()">.insertAfter()</a>
+              </li>
+              <li >
+                <h3 >.before()</h3>
+                <p>добавит перед елементом на стр</p>
+                <a class="before" href="#before"  id="before" onclick="before()">.before()</a>
+              </li>
+              <li >
+                <h3 >.insertBefore()</h3>
+                <p>добавит перед елементом на стр</p>
+                <a href="#insertBefore" class="insertBefore" id="insertBefore" onclick="insertBefor()">.insertBefore()</a>
+              </li>
+
+              <li >
+                <h3 class="wrap">.wrap()</h3>
+                <p class="wrap">обернет тегами каждый елемент</p>
+
+                <a href="#wrap" class="wrap"  id="wrap" onclick="wrap()">.wrap()</a>
+              </li>
+              <li >
+                <h3 class="wrapAll">.wrapAll()</h3>
+                <p class="wrapAll">обернет одним тегом все елементы</p>
+                <a href="#wrapAll" class="wrapAll"  id="wrapAll" onclick="wrapAll()">.wrapAll()</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section >
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-left">
+              <h2>Манипуляция обьектами Удаление содержимого</h2>
+              <a href="https://api.jquery.com/category/manipulation/"
+                >https://api.jquery.com/category/manipulation/</a
+              >
+              <ul>
+                <li id="reMove">
+                  <h3>.remove()</h3>
+                  <p>удалит елементы на стр</p>
+                  <a class="remove" href="#reMove"  >.remove()</a>
+                  <a class="reremove" href="#reremove" id="reremove">удалить и  востановить</a>
+
+                </li>
+                <li id="detach">
+                    <h3>.detach()</h3>
+                    <p>удалит елементы на стр и можно востановить</p>
+                    <a class="detach" href="#detach"  onclick="detach()">.detach()</a>
+                    <a class="redetach" href="#redetach" id="redetach"  onclick="redetach()">удалить и востановить</a>
+
+                  </li>
+                  <li>
+                    <h3>.empty()</h3>
+                    <p>удалит содержимое на стр </p>
+                    <a class="empty" href="#empty"  onclick="empty()">.empty()</a>
+                  </li>
+                  <li >
+                    <h3 class="unwrap">.unwrap()</h3>
+                    <p class="unwrap">удалит родителя , содержимое останется</p>
+                    <a class="unwrap"  href="#unwrap"  onclick="unwrap()">.unwrap()</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section >
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h2>Работа с параметрами и стилями</h2>
-              <a href="https://api.jquery.com/category/css/"
-                >https://api.jquery.com/category/css/</a
+              <h2>Анимационные еффекты</h2>
+              <a href="https://api.jquery.com/category/effects/"
+                >https://api.jquery.com/category/effects/</a
               >
               <ul>
-                <li>
-                  <h3 class="" id="css">.css({'width',100})</h3>
-                  <p>возвращает /изменяет css параметры</p>
-                  <a href="#css" onclick="css()">Заменить возвратить css</a>
+                <li >
+                  <h3  class="hide">.hide()</h3>
+                  <p>скрывает показывает елементы на стр</p>
+                  <a class="hide" href="#hide" onclick="hide()" >.hide()</a>
                 </li>
-                <li>
-                  <h3>removeAttr('id')</h3>
-                  <p>удаляет атрибут выбраныых елементов</p>
-                  <img
-                    class="remove-atr"
-                    src="./images/06_timelineimg2.png"
-                    width="100px"
-                    height="100px"
-                    alt=""
-                  />
-                  <a href="#remove" id="remove" onclick="removeAtr()"
-                    >removeAtr</a
-                  >
-                </li>
-                <li>
-                  <h3>hasClass()</h3>
-                  <p>проверяет наличие класса</p>
-                  <a
-                    href="#hasClass"
-                    id="hasClass"
-                    class="redClass"
-                    onclick="hasClass()"
-                    >hasClass</a
-                  >
-                </li>
-                <li>
-                  <h3>addClass()</h3>
-                  <p>добавляет класс</p>
-                  <a href="#addClass" id="addClass" onclick="addClass()"
-                    >addClass greenClass</a
-                  >
-                </li>
-  
-                <li>
-                  <h3>removeClass()</h3>
-                  <p>удалить класс</p>
-                  <a
-                    href="#removeClass"
-                    id="removeClass"
-                    class="greenClass"
-                    onclick="removeClass()"
-                    >removeClass greenClass</a
-                  >
-                </li>
-                <li>
-                  <h3>taggleClass()</h3>
-                  <p>тоглит класс</p>
-                  <a href="#toggleClass" id="toggleClass" onclick="toggleClass()"
-                    >toggleClass greenClass</a
-                  >
-                </li>
-                <li>
-                  <h3>val()</h3>
-                  <p>возвращает / изменяет значение атрибута value</p>
-                  <a href="#val" id="val" onclick="val()">value hello</a>
-                  <input type="text" name="name" />
-                </li>
+               
+<div class="slider">
+    <div class="slider-wrap">
+        <div class="slider-item">
+            <img src="./images/06_timelineimg2.png" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="./images/06_timelineimg2.png" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="./images/06_timelineimg2.png" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="./images/06_timelineimg2.png" alt="">
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
               </ul>
             </div>
           </div>
@@ -457,6 +653,7 @@
       </section>
   
 
+    
     <section>
       <div class="container">
         <div class="row">
