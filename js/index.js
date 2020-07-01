@@ -9,30 +9,31 @@
 
 // Selector---------------------------------------------------
 
-$('.grid-6 .text-1' ).css({'border':'1px solid black'});
+$(".grid-6 .text-1").css({ border: "1px solid black" });
 // 'Родитель селектор'
-$('.text-2','.grid-6' ).css({'border':'1px solid red'});
+$(".text-2", ".grid-6").css({ border: "1px solid red" });
 // 'Селектор', 'родитель'
 
-$('span, h4, p', '.tag').css({'border':'1px solid orange','border-radius':'25px'})
+$("span, h4, p", ".tag").css({
+  border: "1px solid orange",
+  "border-radius": "25px",
+});
 // 'Несколько селектров',' родитель'
 
-$('.tag > *').css({'background-color':'grey'})
+$(".tag > *").css({ "background-color": "grey" });
 // 'Родитель > дети все'
 
-$('.parent-tag + span').css({'color':'orange'})
+$(".parent-tag + span").css({ color: "orange" });
 // Родитель + ребенок след.
 
 // ('.parent-tag ~ span').css({'color':'orange'})
 // Родитель + все дети след.
 
-
-const obj = $('.tag > *')
+const obj = $(".tag > *");
 console.log(obj);
 console.log(obj[0]);
 
- 
-$('[href]').css({'font-size':'30px'})
+$("[href]").css({ "font-size": "30px" });
 
 // Фильтры-----------------------------------------------------
 
@@ -49,56 +50,54 @@ $('[href]').css({'font-size':'30px'})
 
 // $("*:odd").css({'color':'purple'});
 
-
 // Атрибуты---------------------------------------------------------
 //Прочитать
 // $(function func(){
-//     const atrib = $('.atr'); 
+//     const atrib = $('.atr');
 //     alert(atrib.attr('id'));
 // })
 
 //Заменить
-function changeAtr(){
-    const atrib = $('.atr');
-    if(atrib.attr('id')){
-       // atrib.attr('id','changed-id') 
-        // Замена "атр","на что заменить"
+function changeAtr() {
+  const atrib = $(".atr");
+  if (atrib.attr("id")) {
+    // atrib.attr('id','changed-id')
+    // Замена "атр","на что заменить"
 
-       atrib.attr('id',function(ind, newAtr){
-        // Замена "атр","на что заменить"
-           return 'changes-id'
-       }) 
-};
-    alert(atrib.attr('id'));
-};
+    atrib.attr("id", function (ind, newAtr) {
+      // Замена "атр","на что заменить"
+      return "changes-id";
+    });
+  }
+  alert(atrib.attr("id"));
+}
 
 // Удалить
-function removeAtr(){
-    const atrib = $('.remove-atr');
-    atrib.removeAttr('src')
-};
+function removeAtr() {
+  const atrib = $(".remove-atr");
+  atrib.removeAttr("src");
+}
 
 // hasClass
-function hasClass(){
-    const btnHasClass =$('#hasClass')
-if(btnHasClass.hasClass('redClass')){
-    btnHasClass.attr('class', 'greenClass')
-}else{
-    btnHasClass.attr('class', 'redClass')
+function hasClass() {
+  const btnHasClass = $("#hasClass");
+  if (btnHasClass.hasClass("redClass")) {
+    btnHasClass.attr("class", "greenClass");
+  } else {
+    btnHasClass.attr("class", "redClass");
+  }
 }
-};
 
 // add Class
-function addClass(){
-    const btnaddClass =$('#addClass');
-    btnaddClass.addClass('greenClass');
+function addClass() {
+  const btnaddClass = $("#addClass");
+  btnaddClass.addClass("greenClass");
 }
 
-
 //removeClass
-function removeClass(){
-    const btnremoveClass =$('#removeClass');
-    btnremoveClass.removeClass('greenClass');
+function removeClass() {
+  const btnremoveClass = $("#removeClass");
+  btnremoveClass.removeClass("greenClass");
 }
 
 // //toggleClass
@@ -109,16 +108,17 @@ function removeClass(){
 // }
 
 //toggleClass
-function toggleClass(){
-    const btntoggleClass =$('#toggleClass');
-    btntoggleClass.toggleClass(function(ind, tekSodergimoe){
-        if(tekSodergimoe === 'redClass'){
-            return 'greenClass'
-        }else if(tekSodergimoe == 'redClass greenClass'){
-            return'redClass greenClass'
-        } return 'redClass'
-    });
-};
+function toggleClass() {
+  const btntoggleClass = $("#toggleClass");
+  btntoggleClass.toggleClass(function (ind, tekSodergimoe) {
+    if (tekSodergimoe === "redClass") {
+      return "greenClass";
+    } else if (tekSodergimoe == "redClass greenClass") {
+      return "redClass greenClass";
+    }
+    return "redClass";
+  });
+}
 
 //val() изменяет
 // function val(){
@@ -126,8 +126,8 @@ function toggleClass(){
 // }
 
 // val возвращает
-function val(){
-    alert($('input[name=name]').val())
+function val() {
+  alert($("input[name=name]").val());
 }
 
 // // val возвращает значение индекса
@@ -159,217 +159,613 @@ function val(){
 
 //             // margin-top => marginTop
 
-
-
 //css изменяем функцией
-function css(){
-    const btncss =$('#css');
-btncss.css('fontSize', function(ind, tekZnach){
-return (ind+35)*2
-}  )}
+function css() {
+  const btncss = $("#css");
+  btncss.css("fontSize", function (ind, tekZnach) {
+    return (ind + 35) * 2;
+  });
+}
 
 // //height возвращает
 // function height(){
 //     const btnheight =$('#height');
 // alert(btnheight.height())}
 
-
 // height изменяет
-function height(){
-const btnheight =$('#height');
-btnheight.height(300);}
+function height() {
+  const btnheight = $("#height");
+  btnheight.height(300);
+}
 
 // innerHeight
-function innerHeight(){
-    const btninnerHeight =$('#height');
-    alert(btninnerHeight.innerHeight());
+function innerHeight() {
+  const btninnerHeight = $("#height");
+  alert(btninnerHeight.innerHeight());
 }
 
 // outerHeight
-function outerHeight(){
-    const btnouterHeight =$('#height');
-    $('#height').css('margin', 100)
-    // btnouterHeight.outerHeight(1500);
-    alert(btnouterHeight.outerHeight(true));
+function outerHeight() {
+  const btnouterHeight = $("#height");
+  $("#height").css("margin", 100);
+  // btnouterHeight.outerHeight(1500);
+  alert(btnouterHeight.outerHeight(true));
 }
 
 // width
-function width(){
-    const btnwidth =$('#width');
-    btnwidth.width(500);
-    alert(btnwidth.width());
+function width() {
+  const btnwidth = $("#width");
+  btnwidth.width(500);
+  alert(btnwidth.width());
 }
 
 // innerWidth
-function innerWidth(){
-    const btninnerWidth =$('#innerWidth');
-    alert(btninnerWidth.innerWidth());
+function innerWidth() {
+  const btninnerWidth = $("#innerWidth");
+  alert(btninnerWidth.innerWidth());
 }
 
 // outerWidth
-function outerWidth(){
-    const btnouterWidth =$('#outerWidth');
-    alert(btnouterWidth.outerWidth());
-    $('#outerWidth').css('margin', 100);
-    alert(btnouterWidth.outerWidth(true));
+function outerWidth() {
+  const btnouterWidth = $("#outerWidth");
+  alert(btnouterWidth.outerWidth());
+  $("#outerWidth").css("margin", 100);
+  alert(btnouterWidth.outerWidth(true));
 }
 
 // offset
-function offset(){
-    const btnoffset =$('#offset');
-    alert(btnoffset.offset().left);
-    alert(btnoffset.offset().top);
-    $('#offset').offset({left:750,top:9512})
+function offset() {
+  const btnoffset = $("#offset");
+  alert(btnoffset.offset().left);
+  alert(btnoffset.offset().top);
+  $("#offset").offset({ left: 750, top: 9512 });
 }
 
 // scrollTop
-function scrolTop(){
-    const btnscrollTop =$('#scrollTop');
-    alert($(document).scrollTop());
+function scrolTop() {
+  const btnscrollTop = $("#scrollTop");
+  alert($(document).scrollTop());
 }
 
 // //scrollTop
 // $(document).scrollTop(9500)
 
-
 // Добавление содеожимого----------------------------------------------------------------------
 
 // html
-function html(){
-    const btnhtml =$('#html');
-    // alert(btnhtml.html());
-    // $('.html').html('<p>New html</p>')
-    $('h3').html(function(ind, oldVal){
-        if(ind%2 == 0){
-            return oldVal.toUpperCase()
-        }
-    })
+function html() {
+  const btnhtml = $("#html");
+  // alert(btnhtml.html());
+  // $('.html').html('<p>New html</p>')
+  $("h3").html(function (ind, oldVal) {
+    if (ind % 2 == 0) {
+      return oldVal.toUpperCase();
+    }
+  });
 }
 
 // / text
-function tex(){
-    const btntext =$('#text');
-    alert(btntext.text());
-    // btntext.text('some '+ 'changed-text')
+function tex() {
+  const btntext = $("#text");
+  alert(btntext.text());
+  // btntext.text('some '+ 'changed-text')
 }
 
 // append
-function append(){
-    const newText =$('.append p').clone();
-    //вырезает обект неоюходимо.clone()
+function append() {
+  const newText = $(".append p").clone();
+  //вырезает обект неоюходимо.clone()
 
-    // $('#append ').append('<p>New html</p>')
-    console.log(newText[0]);
-    $('#append').append(newText[0])
+  // $('#append ').append('<p>New html</p>')
+  console.log(newText[0]);
+  $("#append").append(newText[0]);
 }
 
 // appendTo
-function appendTo(){
-   const newtext= $('#appendTo').clone()
-   //вырезает обект неоюходимо.clone()
-   newtext.appendTo($('.appendTo'))
-//указать обьект.appendTo($('куда вставить'))
+function appendTo() {
+  const newtext = $("#appendTo").clone();
+  //вырезает обект неоюходимо.clone()
+  newtext.appendTo($(".appendTo"));
+  //указать обьект.appendTo($('куда вставить'))
 }
 
 // prepend
-function prepend(){
-    const newtext= $('#prepend').clone()
-    //вырезает обект неоюходимо.clone()
-    $('.prepend').prepend(newtext)
-    //куда вставить         что вставить
+function prepend() {
+  const newtext = $("#prepend").clone();
+  //вырезает обект неоюходимо.clone()
+  $(".prepend").prepend(newtext);
+  //куда вставить         что вставить
 
-    //  $('.prepend').prepend(function(ind, oldVal){
-    //  })
- }
+  //  $('.prepend').prepend(function(ind, oldVal){
+  //  })
+}
 
- // after
-function after(){
-    const newtext= $('#after').clone()
-    //вырезает обект неоюходимо.clone()
-    $('.after').after(newtext)
- //($('куда вставить').after (указать обьект)
- }
+// after
+function after() {
+  const newtext = $("#after").clone();
+  //вырезает обект неоюходимо.clone()
+  $(".after").after(newtext);
+  //($('куда вставить').after (указать обьект)
+}
 
-
-  // insertAfter
-function insertAfte(){
-    const newtext= $('#insertAfter').clone()
-    //вырезает обект неоюходимо.clone()
- newtext.insertAfter($('.insertAfter'))
- }
+// insertAfter
+function insertAfte() {
+  const newtext = $("#insertAfter").clone();
+  //вырезает обект неоюходимо.clone()
+  newtext.insertAfter($(".insertAfter"));
+}
 
 //  before
-function before(){
-    const newtext= $('#before').clone()
-    //вырезает обект неоюходимо.clone()
-    $('.before').before(newtext)
- //($('куда вставить').after (указать обьект)
- }
+function before() {
+  const newtext = $("#before").clone();
+  //вырезает обект неоюходимо.clone()
+  $(".before").before(newtext);
+  //($('куда вставить').after (указать обьект)
+}
 
- //  insertBefore
-function insertBefor(){
-    const newtext= $('#insertBefore').clone()
-    //вырезает обект неоюходимо.clone()
-    newtext.insertBefore($('.insertBefore'))
+//  insertBefore
+function insertBefor() {
+  const newtext = $("#insertBefore").clone();
+  //вырезает обект неоюходимо.clone()
+  newtext.insertBefore($(".insertBefore"));
 }
 
 //  wrap
-function wrap(){
-    $('.wrap').wrap($('<div class ="redClass"></div>'))
-    //Во что обернуть $('<div... создаем тег
- }
+function wrap() {
+  $(".wrap").wrap($('<div class ="redClass"></div>'));
+  //Во что обернуть $('<div... создаем тег
+}
 
- //  wrapAll
-function wrapAll(){
-    $('.wrapAll').wrapAll($('<div class ="redClass"></div>'))
-    //Во что обернуть $('<div... создаем тег
- }
+//  wrapAll
+function wrapAll() {
+  $(".wrapAll").wrapAll($('<div class ="redClass"></div>'));
+  //Во что обернуть $('<div... создаем тег
+}
 
- // Удаление содержимого----------------------------------------------------------
+// Удаление содержимого----------------------------------------------------------
 
-  //  remove
-  $('.remove').click(function(){
-      alert('hello')
-  })
+//  remove
+$(".remove").click(function () {
+  alert("hello");
+});
 //   вешаем слушателя
-  $('.reremove').click(function(){
-    const remSave = $('.remove').remove()
-    $('#reMove').append(remSave)
-})
+$(".reremove").click(function () {
+  const remSave = $(".remove").remove();
+  $("#reMove").append(remSave);
+});
 // удаляем .remove() в переменную
 // востанавливаем с переменной
 // предидущий слушатель удален
 
-
-
-  //  detach
-  $('.detach').click(function(){
-    alert('hello')
-})
+//  detach
+$(".detach").click(function () {
+  alert("hello");
+});
 //   вешаем слушателя
-$('.redetach').click(function(){
-  const remSave = $('.detach').detach()
-  $('#detach').append(remSave)
-})
+$(".redetach").click(function () {
+  const remSave = $(".detach").detach();
+  $("#detach").append(remSave);
+});
 // удаляем .remove() в переменную
 // востанавливаем с переменной
 // предидущий слушатель РАБОТАЕТ
 
- //  empty
- function empty(){
-    $('.empty').empty()
- }
+//  empty
+function empty() {
+  $(".empty").empty();
+}
 
-  //  unwrap
-  function unwrap(){
-    $('.unwrap').unwrap()
- }
+//  unwrap
+function unwrap() {
+  $(".unwrap").unwrap();
+}
 
 //  Анимационные еффекты-------------------------------------------------------
 
 // Slider
 
 // hide
- function hide(){
-    $('.hide').hide()
- }
+function hide() {
+  // $('.hide').hide(2000)
+  // $('.hide').hide('slow')
+  // $('.hide').hide('normal')
+  // $('.hide').hide('fast')
+  $(".hide").hide({
+    duration: "fast",
+    easing: "linear",
+    complete: function () {
+      console.log(" hide done");
+    }, // функция по завершению
+    // queue:false //в очереды не попадет -мгновенно
+    queue: "fx", // по умолчанию в очередь
+  });
+}
+
+// show
+function show() {
+  $(".hide").show(2000);
+  // $('.hide').hide('slow')
+  // $('.hide').hide('normal')
+  // $('.hide').hide('fast')
+}
+
+//  hide show
+function hideShow() {
+  const img = $(".hide");
+  if (img.css("display") !== "none") {
+    img.slideUp(2000, function () {
+      // ф-я выполнится после анимационных ефф
+      const text = $('<p style="margin:100px" id="mytext">Some text</p>');
+      text.insertAfter($(this)).hide().show(1000);
+      //this указывает на выбраный елемент
+    });
+  } else {
+    $("#mytext").hide(500, "linear", function () {
+      //    linear протекание линейная
+      //    swing с ускорением
+      img.show("fast");
+      $(this).remove();
+      //this указывает на выбраный елемент
+    });
+    // в етой обл remove отработает без выдержки не в очереди анимации
+  }
+}
+
+// toggle
+function toggle() {
+  // $('.toggle').toggle(1000)
+  // $('.toggle').toggle('slow')
+  // $('.toggle').toggle('normal')
+  // $('.toggle').toggle('fast')
+  $(".toggle").toggle({
+    duration: "fast",
+    easing: "linear",
+    complete: function () {
+      console.log(" toggle done");
+    }, // функция по завершению
+    // queue:false //в очереды не попадет -мгновенно
+    queue: "fx", // по умолчанию в очередь
+  });
+}
+
+// slideUp
+function slideU() {
+  // $('.slideUp').slideUp(2000)
+  // $('.slideUp').slideUp('slow')
+  // $('.slideUp').slideUp('normal')
+  // $('.slideUp').slideUp('fast')
+  $(".slideUp").slideUp({
+    duration: "slow",
+    easing: "linear",
+    complete: function () {
+      console.log(" slideUp done");
+    }, // функция по завершению
+    // queue:false //в очереды не попадет -мгновенно
+    queue: "fx", // по умолчанию в очередь
+  });
+}
+
+// slideDown
+function slideDown() {
+  // $('.slideUp').slideDown(2000)
+  // $('.slideUp').slideDown('slow')
+  // $('.slideUp').slideDown('normal')
+  // $('.slideUp').slideDown('fast')
+  $(".slideUp").slideDown({
+    duration: "slow",
+    easing: "linear",
+    complete: function () {
+      console.log(" slideDown done");
+    }, // функция по завершению
+    // queue:false //в очереды не попадет -мгновенно
+    queue: "fx", // по умолчанию в очередь
+  });
+}
+
+// slideToggle
+function slideToggle() {
+  // $('.slideToggle').slideToggle(2000)
+  // $('.slideToggle').slideToggle('slow')
+  // $('.slideToggle').slideToggle('normal')
+  // $('.slideToggle').slideToggle('fast')
+  $(".slideToggle").slideToggle({
+    duration: "slow",
+    easing: "linear",
+    complete: function () {
+      console.log(" slideToggle done");
+    }, // функция по завершению
+    // queue:false //в очереды не попадет -мгновенно
+    queue: "fx", // по умолчанию в очередь
+  });
+}
+
+// fadeOut
+function fadeOut() {
+  // $('.fadeOut').fadeOut(2000)
+  // $('.fadeOut').fadeOut('slow')
+  // $('.fadeOut').fadeOut('normal')
+  // $('.fadeOut').fadeOut('fast')
+  $(".fadeOut").fadeOut({
+    duration: "slow",
+    easing: "linear",
+    complete: function () {
+      console.log(" fadeOut done");
+    }, // функция по завершению
+    // queue:false //в очереды не попадет -мгновенно
+    queue: "fx", // по умолчанию в очередь
+  });
+}
+
+// fadeIn
+function fadeIn() {
+  // $('.fadeOut').fadeIn(2000)
+  // $('.fadeOut').fadeIn('slow')
+  // $('.fadeOut').fadeIn('normal')
+  // $('.fadeOut').fadeIn('fast')
+  $(".fadeOut").fadeIn({
+    duration: "slow",
+    easing: "linear",
+    complete: function () {
+      console.log(" fadeIn done");
+    }, // функция по завершению
+    // queue:false //в очереды не попадет -мгновенно
+    queue: "fx", // по умолчанию в очередь
+  });
+}
+
+// fadeToggle
+function fadeToggle() {
+  // $('.fadeToggle').fadeToggle(2000)
+  // $('.fadeToggle').fadeToggle('slow')
+  // $('.fadeOut').fadeToggle('normal')
+  // $('.fadeToggle').fadeToggle('fast')
+  $(".fadeToggle").fadeToggle({
+    duration: "slow",
+    easing: "linear",
+    complete: function () {
+      console.log(" fadeToggle done");
+    }, // функция по завершению
+    // queue:false //в очереды не попадет -мгновенно
+    queue: "fx", // по умолчанию в очередь
+  });
+}
+
+// fadeTo
+function fadeTo() {
+  // $('.fadeTo').fadeTo(1000, 0.2)
+  // $('.fadeTo').fadeTo('slow', 0.2)
+  // $('.fadeTo').fadeTo('normal', 0.2)
+  $(".fadeTo").fadeTo("fast", 0.2);
+}
+
+// animation
+function animat() {
+  const sliderWidth = $(".slider-item").outerWidth();
+  const sliderWrap = $(".slider-wrap");
+  const scrollSlider = sliderWrap.position().left - sliderWidth;
+  // выберем смещение слайдера
+  function sl() {
+    sliderWrap.animate(
+      {
+        left: scrollSlider,
+        opacity: 0.5,
+      },
+      1000,
+      "linear",
+      function () {
+        sliderWrap
+          .find(".slider-item:first")
+          .appendTo(sliderWrap)
+          .parent()
+          .css({ left: 0 });
+        // выберем первый слайдер              добавим его в конец -вернем родителя-обнулим растояние
+      }
+    );
+  }
+  setInterval(sl, 3000);
+}
+
+// queue очередь
+function queu() {
+  $(".queue ")
+    .fadeTo(1000, 0.2)
+    .hide(1000)
+    .delay(1000) //delay
+    .fadeIn(1000)
+    .animate({ fontSize: "40px" })
+    .delay(1000) //delay
+    .slideUp(1000)
+    .queue(function () {
+      //Поставит в очередь замену текста
+      $(this).text("Some text Queue"); // добавит в очередь без запуска
+      $(this).dequeue(); //запустит
+    })
+    .text("Some text") //new text без очереди заменит сразу
+    .show(1000)
+    .stop() // остановит выполнение отменяет другие анимации
+    .fadeTo(1000, 1);
+}
+
+//   queu своя очередь
+function que() {
+  $(".queu")
+    .queue("myqueue", function () {
+      // имя очереди
+      $(this).animate({ fontSize: "35px" });
+      // анимация
+      $(this).dequeue("myqueue");
+      // запуск с именем очереди
+    })
+    .delay(1000, "myqueue")
+    // задержка для очереди
+    .queue("myqueue", function () {
+      $(this).text("New text");
+      $(this).dequeue("myqueue");
+      // запуск с именем очереди
+    })
+    .queue("myqueue", function () {
+      $(this).hide(1000).show(1000);
+      $(this).dequeue("myqueue");
+      // запуск с именем очереди
+    })
+    .dequeue("myqueue");
+}
+
+// События------------------------------------------------------------------------
+
+// mouseenter
+function mouseenter() {
+  $(".mouseenter")
+    .stop()
+    .mouseenter({ a: " hello ", b: " word " }, function (event) {
+      // stop отменит другие анимации // пример передачи в ф-ю параметры
+      alert("mouseenter" + event.data.a + event.data.b);
+    });
+}
+
+// mouseleave
+function mouseleave() {
+  $(".mouseleave")
+    .stop()
+    .mouseleave({ a: " hello ", b: " word " }, function (event) {
+      // stop отменит другие анимации    // пример передачи в ф-ю параметры
+      alert("mouseleave" + event.data.a + event.data.b);
+    });
+}
+
+// hover
+function hover() {
+  $(".hover").hover(
+    function () {
+      alert("mouseenter");
+    },
+    // mouseenter обработчик
+    function () {
+      alert("mouseleave");
+    }
+  );
+  // mouseleave обработчик
+}
+
+// mouseover
+function mouseover() {
+  $(".mouseover").mouseover({ a: " hello ", b: " word " }, function (event) {
+    // stop отменит другие анимации // пример передачи в ф-ю параметры
+    alert("mouseover" + event.data.a + event.data.b);
+  });
+}
+
+// mouseout
+function mouseout() {
+  $(".mouseout").mouseout({ a: " hello ", b: " word " }, function (event) {
+    // stop отменит другие анимации // пример передачи в ф-ю параметры
+    alert("mouseout" + event.data.a + event.data.b);
+  });
+}
+
+// mousemoove
+function mousemov() {
+  $(".mousemove").mousemove(function (event) {
+    $(".mouseOut").text(
+      "Координата Х -" + event.pageX + "Координата У-" + event.pageY
+    );
+  });
+}
+
+// click
+function clic() {
+  $(".click").click(function (event) {
+    event.preventDefault();
+//     //отменим стандарный переход href
+    $(this).append(" Click ");
+});
+}
+
+// dblclick
+function dblclic() {
+    $(".dblclick").dblclick(function (event) {
+      event.preventDefault();
+  //     //отменим стандарный переход href
+      $(this).append(" dblclick ");
+  });
+  }
+
+//   События клавиатуры---------------------------------------------------------
+
+// keydown
+function keydow() {
+    $(".keydown").keydown(function(event) {
+        alert(event.which);
+                    // код символа
+  });
+  }
+
+  // keyup
+function keyup() {
+    $(".keyup").keyup(function(event) {
+        // alert(event.which);
+        
+        const key =$(".keydown");
+        key.val($(this).val());
+        // повторяет символы в keydown
+  });
+  }
+
+    // keypress
+function keypres() {
+    $(".keypress").keypress(function(event) {
+        // alert(event.which);
+        
+        const key =$(".keydown");
+        key.val($(this).val());
+        // повторяет символы в keydown
+  });
+  }
+
+//   События формы----------------------------------------------------------------
+
+    // focus
+    function focu() {
+        // $(".focus").focus()
+        $(".focus").focus({ a: " hello ", b: " word " }, function () {
+            $(this).val('Введите текст')
+        })
+      }
+
+       // blur
+    function blu() {
+        $(".blur").blur(function () {
+           alert('blur')}
+        )
+    }
+
+       // focusin
+       function focusi() {
+        $(".focusin").focusin({ a: " hello ", b: " word " }, function () {
+            alert('focusin')
+        })
+      }
+
+       // focusout
+       function focusou() {
+        $(".focusout").focusout({ a: " hello ", b: " word " }, function () {
+            alert('focusout')
+        })
+      }
+
+         // select
+         function selec() {
+            $(".select").select({ a: " hello ", b: " word " }, function () {
+                alert('select')
+            })
+          }
+
+             // submit
+         function submi() {
+            $(".submit").click( function (e) {
+                e.preventDefault();
+
+                
+                alert('select')
+            })
+          }

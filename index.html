@@ -504,7 +504,7 @@
         </div>
       </div>
     </section>
-    <section >
+    <section>
       <div class="container">
         <div class="row">
           <div id="manipulation" class="col-md-12 text-left">
@@ -518,165 +518,450 @@
                 <p>вернет /изменяет html</p>
                 <a href="#html" onclick="html()">.html()</a>
               </li>
-              <li >
-                <h3 >.text()</h3>
+              <li>
+                <h3>.text()</h3>
                 <p>вернет /изменяет содержимое тега</p>
-                <a href="#text" class="text" id="text" onclick="tex()">.text()</a>
+                <a href="#text" class="text" id="text" onclick="tex()"
+                  >.text()</a
+                >
               </li>
-              <li class="append" >
-                <h3 >.append()</h3>
+              <li class="append">
+                <h3>.append()</h3>
                 <p>добавит в конец стр</p>
-                <a href="#append" class="append" id="append" onclick="append()">.append()</a>
+                <a href="#append" class="append" id="append" onclick="append()"
+                  >.append()</a
+                >
               </li>
               <li class="appendTo">
-                <h3 >.appendTo()</h3>
+                <h3>.appendTo()</h3>
                 <p>добавит в конец стр</p>
-                <a href="#appendTo"  id="appendTo" onclick="appendTo()">.appendTo()</a>
+                <a href="#appendTo" id="appendTo" onclick="appendTo()"
+                  >.appendTo()</a
+                >
               </li>
               <li class="prepend">
-                <h3 >.prepend()</h3>
+                <h3>.prepend()</h3>
                 <p>добавит в начало стр</p>
-                <a href="#prepend"  id="prepend" onclick="prepend()">.prepend()</a>
+                <a href="#prepend" id="prepend" onclick="prepend()"
+                  >.prepend()</a
+                >
               </li>
               <li class="after">
-                <h3 >.after()</h3>
+                <h3>.after()</h3>
                 <p>добавит после елемента на стр</p>
-                <a href="#after"  id="after" onclick="after()">.after()</a>
+                <a href="#after" id="after" onclick="after()">.after()</a>
               </li>
               <li class="insertAfter">
-                <h3 >.insertAfter()</h3>
+                <h3>.insertAfter()</h3>
                 <p>добавит после елемента на стр</p>
-                <a href="#insertAfter"  id="insertAfter" onclick="insertAfte()">.insertAfter()</a>
+                <a href="#insertAfter" id="insertAfter" onclick="insertAfte()"
+                  >.insertAfter()</a
+                >
               </li>
-              <li >
-                <h3 >.before()</h3>
+              <li>
+                <h3>.before()</h3>
                 <p>добавит перед елементом на стр</p>
-                <a class="before" href="#before"  id="before" onclick="before()">.before()</a>
+                <a class="before" href="#before" id="before" onclick="before()"
+                  >.before()</a
+                >
               </li>
-              <li >
-                <h3 >.insertBefore()</h3>
+              <li>
+                <h3>.insertBefore()</h3>
                 <p>добавит перед елементом на стр</p>
-                <a href="#insertBefore" class="insertBefore" id="insertBefore" onclick="insertBefor()">.insertBefore()</a>
+                <a
+                  href="#insertBefore"
+                  class="insertBefore"
+                  id="insertBefore"
+                  onclick="insertBefor()"
+                  >.insertBefore()</a
+                >
               </li>
 
-              <li >
+              <li>
                 <h3 class="wrap">.wrap()</h3>
                 <p class="wrap">обернет тегами каждый елемент</p>
 
-                <a href="#wrap" class="wrap"  id="wrap" onclick="wrap()">.wrap()</a>
+                <a href="#wrap" class="wrap" id="wrap" onclick="wrap()"
+                  >.wrap()</a
+                >
               </li>
-              <li >
+              <li>
                 <h3 class="wrapAll">.wrapAll()</h3>
                 <p class="wrapAll">обернет одним тегом все елементы</p>
-                <a href="#wrapAll" class="wrapAll"  id="wrapAll" onclick="wrapAll()">.wrapAll()</a>
+                <a
+                  href="#wrapAll"
+                  class="wrapAll"
+                  id="wrapAll"
+                  onclick="wrapAll()"
+                  >.wrapAll()</a
+                >
               </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-    <section >
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-left">
-              <h2>Манипуляция обьектами Удаление содержимого</h2>
-              <a href="https://api.jquery.com/category/manipulation/"
-                >https://api.jquery.com/category/manipulation/</a
-              >
-              <ul>
-                <li id="reMove">
-                  <h3>.remove()</h3>
-                  <p>удалит елементы на стр</p>
-                  <a class="remove" href="#reMove"  >.remove()</a>
-                  <a class="reremove" href="#reremove" id="reremove">удалить и  востановить</a>
-
-                </li>
-                <li id="detach">
-                    <h3>.detach()</h3>
-                    <p>удалит елементы на стр и можно востановить</p>
-                    <a class="detach" href="#detach"  onclick="detach()">.detach()</a>
-                    <a class="redetach" href="#redetach" id="redetach"  onclick="redetach()">удалить и востановить</a>
-
-                  </li>
-                  <li>
-                    <h3>.empty()</h3>
-                    <p>удалит содержимое на стр </p>
-                    <a class="empty" href="#empty"  onclick="empty()">.empty()</a>
-                  </li>
-                  <li >
-                    <h3 class="unwrap">.unwrap()</h3>
-                    <p class="unwrap">удалит родителя , содержимое останется</p>
-                    <a class="unwrap"  href="#unwrap"  onclick="unwrap()">.unwrap()</a>
-                  </li>
-              </ul>
-            </div>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-left">
+            <h2>Манипуляция обьектами Удаление содержимого</h2>
+            <a href="https://api.jquery.com/category/manipulation/"
+              >https://api.jquery.com/category/manipulation/</a
+            >
+            <ul>
+              <li id="reMove">
+                <h3>.remove()</h3>
+                <p>удалит елементы на стр</p>
+                <a class="remove" href="#reMove">.remove()</a>
+                <a class="reremove" href="#reremove" id="reremove"
+                  >удалить и востановить</a
+                >
+              </li>
+              <li id="detach">
+                <h3>.detach()</h3>
+                <p>удалит елементы на стр и можно востановить</p>
+                <a class="detach" href="#detach" onclick="detach()"
+                  >.detach()</a
+                >
+                <a
+                  class="redetach"
+                  href="#redetach"
+                  id="redetach"
+                  onclick="redetach()"
+                  >удалить и востановить</a
+                >
+              </li>
+              <li>
+                <h3>.empty()</h3>
+                <p>удалит содержимое на стр</p>
+                <a class="empty" href="#empty" onclick="empty()">.empty()</a>
+              </li>
+              <li>
+                <h3 class="unwrap">.unwrap()</h3>
+                <p class="unwrap">удалит родителя , содержимое останется</p>
+                <a class="unwrap" href="#unwrap" onclick="unwrap()"
+                  >.unwrap()</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
-      <section >
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h2>Анимационные еффекты</h2>
-              <a href="https://api.jquery.com/category/effects/"
-                >https://api.jquery.com/category/effects/</a
-              >
-              <ul>
-                <li >
-                  <h3  class="hide">.hide()</h3>
-                  <p>скрывает показывает елементы на стр</p>
-                  <a class="hide" href="#hide" onclick="hide()" >.hide()</a>
-                </li>
-               
-<div class="slider">
-    <div class="slider-wrap">
-        <div class="slider-item">
-            <img src="./images/06_timelineimg2.png" alt="">
-        </div>
-        <div class="slider-item">
-            <img src="./images/06_timelineimg2.png" alt="">
-        </div>
-        <div class="slider-item">
-            <img src="./images/06_timelineimg2.png" alt="">
-        </div>
-        <div class="slider-item">
-            <img src="./images/06_timelineimg2.png" alt="">
-        </div>
-        <div class="clear"></div>
-    </div>
-</div>
-
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-  
-
-    
+      </div>
+    </section>
     <section>
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h2>Методы</h2>
+            <h2>Анимационные еффекты</h2>
+            <a href="https://api.jquery.com/category/effects/"
+              >https://api.jquery.com/category/effects/</a
+            >
             <ul>
               <li>
-                <h3>.html()</h3>
-                <p>прочитает содержимое</p>
+                <h3 class="hide">.hide(time)</h3>
+                <p>скрывает показывает елементы на стр</p>
+                <a href="#hide" onclick="hide()">.hide()</a>
               </li>
               <li>
-                <h3>.append(a)</h3>
-                <p>добавит в HTML</p>
+                <h3 class="show">.show(time)</h3>
+                <p>показывает елементы на стр</p>
+                <a class="show" href="#show" onclick="show()">.show()</a>
               </li>
               <li>
-                <h3>.css({'border':'2px solid red'})</h3>
-                <p>определьт правило</p>
+                <h3 class="show">.hide-show(time)</h3>
+                <p>скрывает показывает елементы на стр</p>
+                <a class="hideShow" href="#hideShow" onclick="hideShow()"
+                  >.hideShow</a
+                >
+              </li>
+              <li>
+                <h3 class="toggle">.toggle(time)</h3>
+                <p>скрывает показывает елементы на стр</p>
+                <a href="#toggle" onclick="toggle()">.toggle()</a>
+              </li>
+              <li>
+                <h3 class="slideUp" id="slideUp">.slideUp(time)</h3>
+                <p>сворачивает елементы на стр</p>
+                <a href="#slideUp" onclick="slideU()">.slideUp()</a>
+              </li>
+              <li>
+                <h3 class="slideDown" id="slideDown">.slideDown(time)</h3>
+                <p>разворачивает елементы на стр</p>
+                <a href="#slideUp" onclick="slideDown()">.slideDown()</a>
+              </li>
+              <li>
+                <h3 class="fadeOut" id="fadeOut">.fadeOut(time)</h3>
+                <p>скрывает прозрачностью елементы на стр</p>
+                <a href="#fadeOut" onclick="fadeOut()">.fadeOut()</a>
+              </li>
+              <li>
+                <h3 class="fadeIn" id="fadeIn">.fadeIn(time)</h3>
+                <p>отображает прозрачностью елементы на стр</p>
+                <a href="#fadeOut" onclick="fadeIn()">.fadeIn()</a>
+              </li>
+              <li>
+                <h3 class="fadeToggle" id="fadeToggle">.fadeToggle(time)</h3>
+                <p>тоглит прозрачностью елементы на стр</p>
+                <a href="#fadeToggle" onclick="fadeToggle()">.fadeToggle()</a>
+              </li>
+              <li>
+                <h3 class="fadeTo" id="fadeTo">.fadeTo(time,opacity)</h3>
+                <p>тоглит прозрачностью елементы на стр</p>
+                <a href="#fadeTo" onclick="fadeTo()">.fadeTo(1000, 0.2)</a>
+              </li>
+              <li>
+                <div id="slider" class="slider">
+                  <div class="slider-wrap">
+                    <div class="slider-item">
+                      <img src="./images/06_timelineimg2.png" alt="" />
+                    </div>
+                    <div class="slider-item">
+                      <img src="./images/06_timelineimg2.png" alt="" />
+                    </div>
+                    <div class="slider-item">
+                      <img src="./images/06_timelineimg2.png" alt="" />
+                    </div>
+                    <div class="slider-item">
+                      <img src="./images/06_timelineimg2.png" alt="" />
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+                <h3 class="animate" id="animate">.animate(time,opacity)</h3>
+                <p>создание анимации пользователем</p>
+                <a href="#slider" onclick="animat()">.animate slider()</a>
+              </li>
+              <li>
+                <h3 class="queue" id="queue">.queue очередь</h3>
+                <p>стандартная очередь 'fx'</p>
+                <a href="#queue" onclick="queu()"
+                  >.queue очередь,задержка,стоп</a
+                >
+              </li>
+              <li>
+                <h3 class="queu" id="queu">.queu очередь</h3>
+                <p>своя очередь событий</p>
+                <a href="#queu" onclick="que()">очередя, паузы для очередей </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>События мыши</h2>
+            <a href="https://api.jquery.com/category/events/"
+              >https://api.jquery.com/category/events/</a
+            >
+            <ul>
+              <li>
+                <form
+                  style="margin: 10px; border: 1px solid black;"
+                  onclick="alert('form')"
+                >
+                  click form
+                  <div
+                    style="margin: 10px; border: 1px solid black;"
+                    onclick="alert('div')"
+                  >
+                    click div
+                    <p
+                      style="margin: 10px; border: 1px solid black;"
+                      onclick="alert('p')"
+                    >
+                      click p
+                    </p>
+                  </div>
+                </form>
+              </li>
+              <li>
+                <h3 style="border: 1px solid black;" class="mouseenter">
+                  .mouseenter
+                </h3>
+                <p>отработает когда зайдет на границу нет всплытия</p>
+                <a href="#mouseenter" onclick="mouseenter()">.mouseenter()</a>
+              </li>
+              <li style="border: 1px solid black;" class="mouseleave">
+                <h3>
+                  .mouseleave
+                </h3>
+                <p>отработает когда выйдет за границы нет всплытия</p>
+                <a href="#mouseleave" onclick="mouseleave()">.mouseleave()</a>
+              </li>
+              <li style="border: 1px solid black;" id="hover" class="hover">
+                <h3>
+                  .hover
+                </h3>
+                <p>отработает когда выйдет за границы</p>
+                <a href="#hover" onclick="hover()">.hover()</a>
+              </li>
+              <li>
+                <h3
+                  style="border: 1px solid black;"
+                  id="mouseover"
+                  class="mouseover"
+                >
+                  .mouseover
+                </h3>
+                <p>отработает когда зайдет на границу есть всплытия</p>
+                <a href="#mouseover" onclick="mouseover()">.mouseover()</a>
+              </li>
+              <li>
+                <h3
+                  style="border: 1px solid black;"
+                  id="mouseout"
+                  class="mouseout"
+                >
+                  .mouseout
+                </h3>
+                <p>отработает когда зайдет на границу есть всплытия</p>
+                <a href="#mouseout" onclick="mouseout()">.mouseout()</a>
+              </li>
+              <li
+                style="border: 1px solid black;"
+                id="mousemove"
+                class="mousemove"
+              >
+                <h3>
+                  .mousemove
+                </h3>
+                <p class="mouseOut">отображает координаты</p>
+                <a href="#mousemoove" onclick="mousemov()">.mousemove()</a>
+              </li>
+              <li id="click">
+                <h3>
+                  .click
+                </h3>
+                <p>клик отмена стандартный свойств</p>
+                <a class="click" href="#click" onclick="clic()">.click()</a>
+              </li>
+              <li id="dblclick">
+                <h3>
+                  .dblclick
+                </h3>
+                <p>клик отмена стандартный свойств</p>
+                <a class="dblclick" href="#dblclick" onclick="dblclic()"
+                  >.dblclick()</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>События клавиатуры</h2>
+            <a href="https://api.jquery.com/category/events/"
+              >https://api.jquery.com/category/events/</a
+            >
+            <ul>
+              <li>
+                <h3>
+                  .keydown()
+                </h3>
+                <input class="keydown" name="name" />
+                <p>отработает при нажатии</p>
+                <a href="#keydown" onclick="keydow()">.keydown()</a>
+              </li>
+              <li>
+                <h3>
+                  .keyup()
+                </h3>
+                <input class="keyup" name="name" />
+                <p>отработает когда отпустили</p>
+                <a href="#keyup" onclick="keyup()">.keyup()</a>
+              </li>
+
+              <li>
+                <h3>
+                  .keypress()
+                </h3>
+                <input class="keypress" name="name" />
+                <p>
+                  начинает срабатывать в момент первого нажатия value еще нет,
+                  со второго
+                </p>
+                <p>при дублировании отстает на один</p>
+                <p>коды конкретных символов разные языки разные</p>
+                <a href="#keypress" onclick="keypres()">.keypress()</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>События форм</h2>
+            <a href="https://api.jquery.com/category/events/"
+              >https://api.jquery.com/category/events/</a
+            >
+            <ul>
+              <li>
+                <h3>
+                  .focus()
+                </h3>
+                <input class="focus" name="name" />
+                <p>при фокусе не всплывает</p>
+                <a href="#focus" onclick="focu()">.focus()</a>
+              </li>
+              <li>
+                <h3>
+                  .blur()
+                </h3>
+                <input class="blur" name="name" />
+                <p>при потере фокуса</p>
+                <a href="#blur" onclick="blu()">.blur()</a>
+              </li>
+              <li>
+                <h3>
+                  .focusin()
+                </h3>
+                <input class="focusin" name="name" />
+                <p>при фокусе всплывает</p>
+                <a href="#focusin" onclick="focusi()">.focusin()</a>
+              </li>
+              <li>
+                <h3>
+                  .focusout()
+                </h3>
+                <input class="focusout" name="name" />
+                <p>при потере фокуса всплывает</p>
+                <a href="#focusout" onclick="focusou()">.focusou()</a>
+              </li>
+              <li>
+                <h3>
+                  .submit()
+                </h3>
+                <input class="submit" placeholder="Выдели текст" name="name" />
+                <p>при выделении текста мышью или Shift + -></p>
+                <a href="#submit" onclick="submi()">.submit()</a>
+              </li>
+              <li>
+              <h3>
+                .select()
+              </h3>
+              <form action="">
+                <input  class="inpsubmit" placeholder="Выдели текст" name="name" />
+                <input type="btnsubmit" class="select" placeholder="Выдели текст" />
+              </form>
+              <p>при выделении текста мышью или Shift + -></p>
+              <a href="#select" onclick="selec()">.select()</a>
+            </li>
+                     </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="./js/jquery-3.5.1.js"></script>
     <script src="./js/index.js"></script>
   </body>
