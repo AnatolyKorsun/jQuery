@@ -896,7 +896,8 @@
           </div>
         </div>
       </div>
-    </section> <section>
+    </section>
+    <section>
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -939,24 +940,113 @@
               </li>
               <li>
                 <h3>
+                  .select()
+                </h3>
+                <input class="select" placeholder="Выдели текст" name="name" />
+                <p>при выделении текста мышью или Shift + -></p>
+                <a href="#select" onclick="selec()">.select()</a>
+              </li>
+              <li>
+                <h3>
                   .submit()
                 </h3>
-                <input class="submit" placeholder="Выдели текст" name="name" />
+                <form>
+                  <input
+                    class="inpsubmit"
+                    placeholder="Выдели текст"
+                    name="name"
+                  />
+                  <button type="submit" class="btnsubmit">submit</button>
+                </form>
                 <p>при выделении текста мышью или Shift + -></p>
                 <a href="#submit" onclick="submi()">.submit()</a>
               </li>
               <li>
-              <h3>
-                .select()
-              </h3>
-              <form action="">
-                <input  class="inpsubmit" placeholder="Выдели текст" name="name" />
-                <input type="btnsubmit" class="select" placeholder="Выдели текст" />
-              </form>
-              <p>при выделении текста мышью или Shift + -></p>
-              <a href="#select" onclick="selec()">.select()</a>
-            </li>
-                     </ul>
+                <h3 id="change">
+                  .change()
+                </h3>
+                <form>
+                  <input
+                    class="changename"
+                    placeholder="Выдедите текст"
+                    name="name"
+                  />
+                  <input class="changemail" placeholder="Email" name="email" />
+                </form>
+                <p>после ввода и выхода фокуса</p>
+                <a href="#change" onclick="chang()">.change()</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>События загрузки страницы</h2>
+            <ul>
+              <li>
+                <h3>
+                  .redy()
+                </h3>
+                <p>при готовности DOM до загрузки изобр. медиа</p>
+                <p>все елементы загружены и доступны(для пользов скриптов)</p>
+              </li>
+              <li>
+                <h3 id="load">
+                  .load()
+                </h3>
+                <p>при полной загрузке елемента</p>
+              </li>
+              <li>
+                <h3 id="unload">
+                  .unload()
+                </h3>
+                <p>для window при уходе / переходе со стр</p>
+                <p>не работает</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>События браузера</h2>
+            <ul>
+              <li>
+                <h3>
+                  .eror()
+                </h3>
+                <img id="eror" src="./images/06_timelineimg2.png" alt="eror()">
+                <p>при готовности DOM до загрузки изобр. медиа</p>
+                <p>все елементы загружены и доступны(для пользов скриптов)</p>
+              </li>
+              <li>
+                <h3 >
+                  .resize()
+                </h3>
+                <p>при при изменении окна</p>
+              </li>
+              <li>
+                <h3 id="unload">
+                  .unload()
+                </h3>
+                <p>для window при уходе / переходе со стр</p>
+                <p>не работает</p>
+              </li>
+              <li>
+                <h3 id="scroll">
+                  .scroll()
+                </h3>
+                <p>для window при уходе / переходе со стр</p>
+                <a href="#scroll" onclick="scrol()">.scroll()</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

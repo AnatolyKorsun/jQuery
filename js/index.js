@@ -676,96 +676,156 @@ function mousemov() {
 function clic() {
   $(".click").click(function (event) {
     event.preventDefault();
-//     //отменим стандарный переход href
+    //     //отменим стандарный переход href
     $(this).append(" Click ");
-});
+  });
 }
 
 // dblclick
 function dblclic() {
-    $(".dblclick").dblclick(function (event) {
-      event.preventDefault();
-  //     //отменим стандарный переход href
-      $(this).append(" dblclick ");
+  $(".dblclick").dblclick(function (event) {
+    event.preventDefault();
+    //     //отменим стандарный переход href
+    $(this).append(" dblclick ");
   });
-  }
+}
 
 //   События клавиатуры---------------------------------------------------------
 
 // keydown
 function keydow() {
-    $(".keydown").keydown(function(event) {
-        alert(event.which);
-                    // код символа
+  $(".keydown").keydown(function (event) {
+    alert(event.which);
+    // код символа
   });
-  }
+}
 
-  // keyup
+// keyup
 function keyup() {
-    $(".keyup").keyup(function(event) {
-        // alert(event.which);
-        
-        const key =$(".keydown");
-        key.val($(this).val());
-        // повторяет символы в keydown
-  });
-  }
+  $(".keyup").keyup(function (event) {
+    // alert(event.which);
 
-    // keypress
-function keypres() {
-    $(".keypress").keypress(function(event) {
-        // alert(event.which);
-        
-        const key =$(".keydown");
-        key.val($(this).val());
-        // повторяет символы в keydown
+    const key = $(".keydown");
+    key.val($(this).val());
+    // повторяет символы в keydown
   });
-  }
+}
+
+// keypress
+function keypres() {
+  $(".keypress").keypress(function (event) {
+    // alert(event.which);
+
+    const key = $(".keydown");
+    key.val($(this).val());
+    // повторяет символы в keydown
+  });
+}
 
 //   События формы----------------------------------------------------------------
 
-    // focus
-    function focu() {
-        // $(".focus").focus()
-        $(".focus").focus({ a: " hello ", b: " word " }, function () {
-            $(this).val('Введите текст')
-        })
-      }
+// focus
+function focu() {
+  // $(".focus").focus()
+  $(".focus").focus({ a: " hello ", b: " word " }, function () {
+    $(this).val("Введите текст");
+  });
+}
 
-       // blur
-    function blu() {
-        $(".blur").blur(function () {
-           alert('blur')}
-        )
-    }
+// blur
+function blu() {
+  $(".blur").blur(function () {
+    alert("blur");
+  });
+}
 
-       // focusin
-       function focusi() {
-        $(".focusin").focusin({ a: " hello ", b: " word " }, function () {
-            alert('focusin')
-        })
-      }
+// focusin
+function focusi() {
+  $(".focusin").focusin({ a: " hello ", b: " word " }, function () {
+    alert("focusin");
+  });
+}
 
-       // focusout
-       function focusou() {
-        $(".focusout").focusout({ a: " hello ", b: " word " }, function () {
-            alert('focusout')
-        })
-      }
+// focusout
+function focusou() {
+  $(".focusout").focusout({ a: " hello ", b: " word " }, function () {
+    alert("focusout");
+  });
+}
 
-         // select
-         function selec() {
-            $(".select").select({ a: " hello ", b: " word " }, function () {
-                alert('select')
-            })
-          }
+// select
+function selec() {
+  $(".select").select({ a: " hello ", b: " word " }, function () {
+    alert("select");
+  });
+}
 
-             // submit
-         function submi() {
-            $(".submit").click( function (e) {
-                e.preventDefault();
+// submit
+function submi() {
+  // $(".btnsubmit").click(function (e) {
+  //   e.preventDefault();
+  //  //Отмена отправки
+  //   alert("submit");
+  // });
 
-                
-                alert('select')
-            })
-          }
+  $("form").submit(function (e) {
+    //отследим отправку формы
+    e.preventDefault();
+    $('.btnsubmit').text($('.inpsubmit').val())
+  });
+}
+
+// change
+function chang() {
+  $(".changename").change({ a: " hello ", b: " word " },function (e) {
+    const email =$('.changemail');
+    email.val($('.changename').val());
+  });
+};
+
+// События загрузки страницы-------------------------------------------------------
+// ready
+$(document).ready(function(){
+  alert('.ready()' )
+})
+
+// load
+// $( "#load" ).load( alert('.load()'));
+
+// unload
+// $(document).ready(function(){
+  // $(window).on( "unload", function(){
+  //   alert("Goodbye!");
+  // });
+// });
+$(document).on( "unload", function() {
+  alert("unload()");
+});
+
+// error
+$( "#error" ).error(function() {
+    alert( "Handler for .error() called." )
+  })
+
+  // resize
+  $( window ).trigger( "resize", function() {
+    alert( "resize" )
+  })
+
+   // scroll
+  function scrol(){
+    // $('#scroll').text($(window).scrollTop())
+    console.log($(window).scrollTop())
+  }
+
+  //  $( window ).scrollTop(function() {
+  //    if ($(this).scrollTop() >500){
+  //      $('#scroll').fadeIn(500)
+  //    }
+  //   alert( "scroll" )
+  // })
+  // $('#scroll').click(function(){
+  //   $(window).scrollTop(0)
+  // })
+
+// События браузера--------------------------------------------------------------
