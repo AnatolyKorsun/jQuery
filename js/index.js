@@ -915,5 +915,21 @@ function closes() {
 
 // find
 function fin() {
-  $("li").find("li.find").css({ border: "1px solid red" });
+  $("ul").find("li.find").css({ border: "1px solid red" });
+  // $('ul li.find').css({ border: "1px solid red" });
+}
+
+// next
+function nex() {
+  $(".next").next().next().css({ border: "1px solid red" });
+}
+
+// nextAll
+function nextAl() {
+  $(".nextAll").nextAll().css({ border: "1px solid red" });
+}
+
+// nextUntil
+function nextUnti() {
+  $("#nextUntil").nextUntil().css({ border: "1px solid red" });
 }
