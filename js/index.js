@@ -785,12 +785,14 @@ function chang() {
 
 // События загрузки страницы-------------------------------------------------------
 // ready
-$(document).ready(function(){
-  alert('.ready()' )
-})
+// $(document).ready(function(){
+//   alert('.ready()' )
+// })
 
-// load
-// $( "#load" ).load( alert('.load()'));
+// // load
+// $( "#load" ).load( function(){
+//   alert('.load()')}
+//   );
 
 // unload
 // $(document).ready(function(){
@@ -802,30 +804,116 @@ $(document).on( "unload", function() {
   alert("unload()");
 });
 
+// События браузера--------------------------------------------------------------
+
 // error
-$( "#error" ).error(function() {
+$( "#error" ).on( "error", function() {
     alert( "Handler for .error() called." )
   })
 
   // resize
-  $( window ).trigger( "resize", function() {
+  $(window).trigger( "resize", function() {
     alert( "resize" )
   })
 
    // scroll
   function scrol(){
-    // $('#scroll').text($(window).scrollTop())
-    console.log($(window).scrollTop())
+    const scrol = $('#scroll');
+    scrol.scroll($(window).scrollTop())
   }
 
-  //  $( window ).scrollTop(function() {
-  //    if ($(this).scrollTop() >500){
-  //      $('#scroll').fadeIn(500)
-  //    }
-  //   alert( "scroll" )
-  // })
-  // $('#scroll').click(function(){
-  //   $(window).scrollTop(0)
-  // })
+   $( window ).scrollTop(function() {
+     if ($(this).scrollTop() >500){
+       $('.scrollTop').fadeIn(500)
+     }
+  })
+  $('.scrollTop').click(function(){
+    $(window).scrollTop(0)
+  })
 
-// События браузера--------------------------------------------------------------
+// Универсальные методы--------------------------------------------------------
+
+// on
+// function onn() {
+// $("#on").on( "mouseout click ", function(e) {
+//   e.preventDefault()
+//   $("#on").append($('<a>Item 1</a>'))
+//   // alert( "on" )
+// })}
+
+function onn() {
+  $("#on").on( {mouseout:function(){alert('mouseout')}, click: function() {alert("click")
+                // Несколько ф-й в обьекте
+}})}
+
+// on делегирование
+$('.rootOn').on('click','a', function(e){
+  // вешаем на родителя("свойство","для кого", ф-я)
+  e.preventDefault()
+  addNew = $('.rootOn');
+  addNew.append($('<a href="#rootOn">.on() делегирование</a>'));
+})
+// $('.rootOn').click('a', function(e){
+//   e.preventDefault()
+//   addNew = $('.rootOn');
+//   addNew.append($('<a href="#rootOn">.on() делегирование</a>'));
+// })
+
+// off
+$('#rootOff').on('click','a', function(e){
+  e.preventDefault()
+  addNew = $('#rootOff');
+  addNew.append($('<a href="#rootOff">.off()</a>'));
+})
+function of(){
+  $('#rootOff').off()
+}  
+
+// one
+function onee() {
+  $('#one').one('mouseenter',function(){
+    alert('one() один раз')
+  })
+}
+
+// trigger
+function trigge() {
+  $('#trigger').mouseenter(function(){
+    alert('click trigger')
+  })
+  $('#trigger').trigger('mouseenter');
+}
+
+// userevent
+function userevent() {
+  $('#userevent').on('userevent',function(){
+    alert('userevent')
+  })
+  $('#userevent').trigger('userevent');
+}
+
+// trigerHandler
+function trigerHandler() {
+  $('#trigerHandler').on('mouseenter',function(){
+    alert('mouseenter trigerHandler')
+  })
+  $('#trigerHandler').triggerHandler('mouseenter');
+}
+
+//Методы выбраных елементов-----------------------------------------------------------------------------
+
+// children
+function childre() {
+  $("#childre").children().css({ border: "1px solid red" });
+  $("#childre").children('p').css({ border: "1px solid white" });
+}
+
+// closest
+function closes() {
+  $(".closest").closest('div').css({ border: "1px solid red" });
+}
+
+// find
+function fin() {
+  $("li").find("li.find").css({ border: "1px solid red" });
+}

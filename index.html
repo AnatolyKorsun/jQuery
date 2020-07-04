@@ -837,6 +837,7 @@
                   .click
                 </h3>
                 <p>клик отмена стандартный свойств</p>
+                <p>.click не будет отрабатывать ссылках которые сам добавилю исп .on(click) </p>
                 <a class="click" href="#click" onclick="clic()">.click()</a>
               </li>
               <li id="dblclick">
@@ -1033,10 +1034,24 @@
                 <p>при при изменении окна</p>
               </li>
               <li>
-                <h3 id="unload">
+                <h3 >
                   .unload()
                 </h3>
                 <p>для window при уходе / переходе со стр</p>
+                <p>не работает</p>
+              </li>
+              <li>
+                <h3 id="error">
+                  .error()
+                </h3>
+                <p>для window при ошибке </p>
+                <p>не работает</p>
+              </li>
+              <li>
+                <h3 id="resize">
+                  .resize()
+                </h3>
+                <p>для window при ошибке </p>
                 <p>не работает</p>
               </li>
               <li>
@@ -1045,6 +1060,108 @@
                 </h3>
                 <p>для window при уходе / переходе со стр</p>
                 <a href="#scroll" onclick="scrol()">.scroll()</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>:) Универсальные методы</h2>
+            <ul>
+              
+              <li>
+                <h3>
+                   Scroll top
+                </h3>
+                <div style="left:70%; top:70%; width: 100px; height: 10px;display: none; position: fixed;" class="scrollTop">ScrollTop Up</div>
+              </li>
+
+              <li>
+                <h3 id="on" class="greenClass">
+                   .on("mouseout click ", function(e){})
+                </h3>
+                <h3 class="greenClass">
+                  .on({mouseout:function(){}, click:function(){}})
+               </h3>
+                <p>при срабатывании события или нескольких </p>
+                <p>on(click) будет отрабатывать на ссылках которые сам создал.вешать на родителя</p>
+                <a href="#on" class="on" onclick="onn()" >.on()</a>
+              </li>
+
+              <li class="rootOn" id="rootOn">
+                <h3>.on() делегирование</h3>
+                <a href="#rootOn">.on() делегирование</a>
+              </li>
+
+              <li id="rootOff">
+                <h3 id="off">
+                   .off()
+                </h3>
+                <p>для удаления обработчика</p>
+                  <a href="#rootOff" class="off">.off()</a>
+                  <a href="#rootOff" onclick="of()">.off() убрать обработчик</a>
+              </li>
+              <li >
+                <h3 id="one" class="greenClass">
+                   .one()
+                </h3>
+                <p>установит обработчик однократно</p>
+                  <a href="#one" onclick="onee()">.one()</a>
+              </li>
+              <li >
+                <h3 id="trigger" class="greenClass">
+                   .trigger()
+                </h3>
+                <p>запускает инициализацию события отработает сколько елементов</p>
+                  <a href="#trigger" onclick="trigge()">.trigger()</a>
+              </li>
+              <li >
+                <h3 id="userevent" class="greenClass">
+                   пользовательское событие вызванное trigger
+                </h3>
+                <p>пользовательское событие вызванное trigger</p>
+                  <a href="#userevent" onclick="userevent()">userevent</a>
+              </li>
+              <li >
+                <h3 id="trigerHandler" class="greenClass">
+                   .trigerHandler()
+                </h3>
+                <p>запуск событие вызванное trigger без инициализации</p>
+                  <a href="#trigerHandler" onclick="trigerHandler()">trigerHandler</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Методы выбраных елементов</h2>
+            <ul>
+            
+              <li class="childre" id="childre">
+                <h3>.children()</h3>
+                <p>дочерние елементы / ребенок з селектором</p>
+                <a href="#childre" onclick="childre()">.children()</a>
+              </li>
+
+              <li id="closest">
+                <h3>.closest()</h3>
+                <p>дочерние елементы / ребенок з селектором</p>
+                <a class="closest" href="#closest" onclick="closes()">.closest()</a>
+              </li>
+
+              <li class="find" id="find">
+                <h3>.find()</h3>
+                <p>дочерние елементы / ребенок з селектором</p>
+                <a class="find" href="#find" onclick="fin()">.find()</a>
               </li>
             </ul>
           </div>
