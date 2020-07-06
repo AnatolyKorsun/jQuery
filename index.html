@@ -22,6 +22,7 @@
         </div>
       </div>
     </header>
+    <!-- Подключение -->
     <section>
       <div class="container">
         <div class="row">
@@ -44,11 +45,12 @@
         </div>
       </div>
     </section>
+    <!-- Вызов jQuery -->
     <section>
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-left">
-            <h2>Вызов jquery</h2>
+            <h2>Вызов jQuery</h2>
             <h3>1-й jQuery() или $()</h3>
             <p>Вернет елемент или все елементы d виде обьекта</p>
             <p>$('.class') селектор по классу</p>
@@ -70,11 +72,12 @@
         </div>
       </div>
     </section>
+    <!-- Селекторы -->
     <section>
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-right">
-            <h2>Selector</h2>
+            <h2>Селекторы</h2>
             <a href="https://api.jquery.com/category/selectors/"
               >https://api.jquery.com/category/selectors/</a
             >
@@ -108,6 +111,7 @@
         </div>
       </div>
     </section>
+    <!-- Фильтры -->
     <section>
       <div class="container">
         <div class="row">
@@ -174,6 +178,7 @@
         </div>
       </div>
     </section>
+    <!-- Фильтры дочерних елементов -->
     <section>
       <div class="container">
         <div class="row">
@@ -225,6 +230,7 @@
         </div>
       </div>
     </section>
+    <!-- Фильтры елементов форм -->
     <section>
       <div class="container">
         <div class="row">
@@ -303,6 +309,7 @@
         </div>
       </div>
     </section>
+    <!-- Работа с атрибутами -->
     <section>
       <div class="container">
         <div class="row">
@@ -379,6 +386,7 @@
         </div>
       </div>
     </section>
+    <!-- Работа с параметрами и стилями -->
     <section>
       <div class="container">
         <div class="row">
@@ -504,6 +512,7 @@
         </div>
       </div>
     </section>
+    <!-- Манипуляция обьектами Добавление содержимого -->
     <section>
       <div class="container">
         <div class="row">
@@ -601,6 +610,7 @@
         </div>
       </div>
     </section>
+    <!-- Манипуляция обьектами Удаление содержимого -->
     <section>
       <div class="container">
         <div class="row">
@@ -649,6 +659,7 @@
         </div>
       </div>
     </section>
+    <!-- Анимационные еффекты -->
     <section>
       <div class="container">
         <div class="row">
@@ -749,6 +760,7 @@
         </div>
       </div>
     </section>
+    <!-- События мыши -->
     <section>
       <div class="container">
         <div class="row">
@@ -854,6 +866,7 @@
         </div>
       </div>
     </section>
+    <!-- События клавиатуры -->
     <section>
       <div class="container">
         <div class="row">
@@ -898,6 +911,7 @@
         </div>
       </div>
     </section>
+    <!-- События форм -->
     <section>
       <div class="container">
         <div class="row">
@@ -982,6 +996,7 @@
         </div>
       </div>
     </section>
+    <!-- События загрузки страницы -->
     <section>
       <div class="container">
         <div class="row">
@@ -1013,6 +1028,7 @@
         </div>
       </div>
     </section>
+    <!-- События браузера -->
     <section>
       <div class="container">
         <div class="row">
@@ -1066,7 +1082,7 @@
         </div>
       </div>
     </section>
-
+    <!-- Универсальные методы -->
     <section>
       <div class="container">
         <div class="row">
@@ -1139,6 +1155,7 @@
         </div>
       </div>
     </section>
+    <!-- Методы выбраных елементов -->
     <section>
       <div class="container">
         <div class="row">
@@ -1179,11 +1196,130 @@
                 <p>поиск всех елементов до выбранного включительно</p>
                 <a  class="nextUntil" href="#nextUntil" onclick="nextUnti()">.nextUntil()</a>
               </li>
+              <li  id="offsetParent">
+                <h3 >.offsetParent()</h3>
+                <p>поиск ближайшего родителя со свойством position:relative/fix </p>
+                <a  class="offsetParent" href="#offsetParent" onclick="offsetParen()">.offsetParent()</a>
+              </li>
+              <li  id="parents">
+                <h3 >.parents()</h3>
+                <p>поиск всех родителей до начала  родители, прародители, прапрародители.</p>
+                <a  class="parents" href="#parents" onclick="parent()">.parents()</a>
+              </li>
+              <li  id="parent">
+                <h3 >.parent()</h3>
+                <p>поиск ближайшего родителя</p>
+                <a  class="parent" href="#parent" onclick="paren()">.parent()</a>
+              </li>
+              <li  id="parentsUntil">
+                <h3 >.parentsUntil()</h3>
+                <p>поиск всех родителей до селектора  родители, прародители, прапрародители.</p>
+                <a  class="parentsUntil" href="#parentsUntil" onclick="parentsUnti()">.parentsUntil()</a>
+              </li>
+              <li  id="prev">
+                <h3 >.prev()</h3>
+                <p>поиск предидущего.</p>
+                <a  class="prev" href="#prev" onclick="pre()">.prev()</a>
+              </li>
+              <li  id="prevAll">
+                <h3 >.prevAll()</h3>
+                <p>поиск всех предидущих</p>
+                <a  class="prevAll" href="#prevAll" onclick="prevAl()">.prevAll()</a>
+              </li>
+              <li>
+                <h3 id="prevUntil">.prevUntil()</h3>
+                <p>поиск всех елементов которые лежат перед каждым из выбраных до велектора</p>
+                <a  class="prevUntil" href="#prevUntil" onclick="prevUnti()">.prevUntil()</a>
+              </li>
+              <li>
+                <h3 id="siblings">.siblings()</h3>
+                <a  class="siblings" href="#siblings" onclick="sibling()">.siblings()</a>
+                <p>поиск всех соседних елементов с общим родителем</p>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
+    <!-- Методы фильтрации -->
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Методы фильтрации</h2>
+            <ul>
+            
+              <li class="eq" id="eq">
+                <h3>.eq()</h3>
+                <p>елемент выборки под номером</p>
+                <a href="#eq" onclick="eqq()">.eq()</a>
+              </li>
+              <li class="filter" id="filter">
+                <h3 class="filtr">.filter()</h3>
+                <p>елементы выборки удовлетворяющие условия фильтрации</p>
+                <a class="filtr" href="#filter" onclick="filte()">.filter()</a>
+              </li>
+              <li class="first" id="first">
+                <h3 >.first()</h3>
+                <p>елемент выборки под номером 1</p>
+                <a  href="#first" onclick="firs()">.first()</a>
+              </li>
+              <li class="has" id="has">
+                <h3 >.has()</h3>
+                <p class="hass">выберет елемент который содержит внутри селектор на всех уровнях вложености</p>
+                <a  href="#has" onclick="hass()">.has()</a>
+              </li>
+              <li class="is" id="is">
+                <h3 >.is()</h3>
+                <p class="iss">проверит содержит ли хотя бы один елемент селектор. Вернет true/false</p>
+                <a  href="#is" onclick="iss()">.is()</a>
+              </li>
+              <li class="last" id="last">
+                <h3 >.last()</h3>
+                <p >вернет последний елемент</p>
+                <a  href="#last" onclick="las()">.last()</a>
+              </li>
+              <li class="not" id="not">
+                <h3 >.not()</h3>
+                <p class="nott" >вернет елементы за исключением селектора </p>
+                <a  href="#not" onclick="nott()">.not()</a>
+              </li>
+              <li class="slice" id="slice">
+                <h3 >.slice()</h3>
+                <p >вернет елементы с индексами из области</p>
+                <a  href="#slice" onclick="slic()">.slice()</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- Методы циклической обработки выборки -->
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2>Методы циклической обработки выборки</h2>
+              <ul>
+              
+                <li class="each" id="each">
+                  <h3>.each()</h3>
+                  <p>вызывает заданную ф-ю для каждого елемента выборки</p>
+                  <a href="#each" onclick="eac()">.each()</a>
+                </li>
+                <li class="map" id="map">
+                  <h3>.map()</h3>
+                  <p>елементы выборки удовлетворяющие условия фильтрации</p>
+                  <a class="map" href="#map" onclick="mapp()">.map()</a>
+                </li>
+                
+               
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
     <script src="./js/jquery-3.5.1.js"></script>
     <script src="./js/index.js"></script>

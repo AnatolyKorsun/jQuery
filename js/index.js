@@ -7,7 +7,7 @@
 
 // $(function(){})
 
-// Selector---------------------------------------------------
+// Селекторы---------------------------------------------------
 
 $(".grid-6 .text-1").css({ border: "1px solid black" });
 // 'Родитель селектор'
@@ -931,5 +931,124 @@ function nextAl() {
 
 // nextUntil
 function nextUnti() {
-  $("#nextUntil").nextUntil().css({ border: "1px solid red" });
+  $(".nextAll").nextUntil().css({ border: "1px solid red" });
 }
+
+// offsetParent
+function offsetParen() {
+  $(".offsetParent").offsetParent().css({ border: "1px solid red" });
+}
+
+// parents
+function parent() {
+  $(".parents").parents().css({ border: "1px solid red" });
+  // $(".parents").parents('.container').css({ border: "1px solid red" });
+}
+
+// parent
+function paren() {
+  $(".parent").parent().css({ border: "1px solid red" });
+}
+
+// parentsUntil
+function parentsUnti() {
+  $(".parentsUntil").parentsUntil('.container').css({ border: "1px solid red" });
+}
+
+// prev
+function pre() {
+  $(".prev").prev().prev().css({ border: "1px solid red" });
+}
+
+// prevAll
+function prevAl() {
+  $(".prevAll").prevAll().css({ border: "1px solid red" });
+}
+
+// prevUntil
+function prevUnti() {
+  $(".prevUntil").prevUntil('#prevUntil').css({ border: "1px solid red" });
+}
+
+// sibling
+function sibling() {
+  $(".siblings").siblings().css({ border: "1px solid red" });
+}
+
+// Методы фильтрации-------------------------------------------------------------
+
+// eq
+function eqq() {
+  // $(".eq").children().eq(1).css({ border: "1px solid red" });
+  $(".eq").children().eq(-1).css({ border: "1px solid red" });
+}
+
+// filter
+function filte() {
+  // $(".filter").children().filter('.filtr').css({ border: "1px solid red" });
+                          //по какому селектору фильтровать
+  // $(".filter").children().filter(function(index){if(index%2 === 0){ return true}}).css({ border: "1px solid red" });
+                          // ф-я для каждого елемента для фильтрации  
+                          // this укажет на елемент
+  $(".filter").children().filter(function(index){{ return $(this).attr('class') === 'filtr'}}).css({ border: "1px solid red" });
+}
+
+// first
+function firs() {
+  $(".first").children().first().css({ border: "1px solid red" });
+}
+
+// has
+function hass() {
+ $("section").has(".hass").css({ border: "1px solid red" })
+}
+
+// is
+function iss() {
+  if($(".is").children().is(".iss")){
+    alert('yes')
+  }
+ }
+
+ // last
+function las() {
+  $(".last").children().last().css({ border: "1px solid red" })
+ }
+
+  // not
+function nott() {
+  // $(".not").children().not('.nott').css({ border: "1px solid red" })
+  // $(".not").children().not('h3, p').css({ border: "1px solid red" })
+  $(".not").children().not(function(index){return index%2 === 0}).css({ border: "1px solid red" })
+                          // ф-я для каждого елемента для фильтрации  
+                          //true - елемент исключается
+ } 
+
+  // slice
+function slic() {
+  $(".slice").children().slice(0,2).css({ border: "1px solid red" })
+                        // slice(индекс начала выборкиб, индекс конца)
+                        // slice(индекс начала выборкиб, нет второго выберет до конца)
+ }
+
+//  Методы циклической обработки выборки--------------------------------------------------
+
+ // each
+ function eac() {
+  // $(".each").children().each(function(index){return index%2 === 0}).css({ border: "1px solid red" })
+  $(".each").children().each(function(index,el){
+    const width = $(el).width()
+    $(el).text('Ширина елемента ' + width)
+ })
+}
+
+// map
+function mapp() {
+ $('.map').children().map(function(ind,el){
+      // console.log($(this));
+      //this в ф-и равно елементу
+      // console.log($(el));
+      return $(this).text($(this).text() + ' :)')
+  });
+}
+
