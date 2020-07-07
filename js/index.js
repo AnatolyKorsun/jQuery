@@ -1052,3 +1052,36 @@ function mapp() {
   });
 }
 
+// Полезные методы----------------------------------------------------------------
+
+  // add
+  function ad() {
+    $(".add").add('.row').css({ border: "1px solid red" })
+   }
+
+     // andSelf
+  function andSel() {
+    $(".andSelf").parent().css({ border: "1px solid red" }).andSelf().css({ border: "1px solid black" })
+    //Выбрали елемент .переместились к роодителю . и добавили сам елемент с которого начали
+   }
+
+   
+     // contents
+  function content() {
+    // $(".contents").children().each(function(){alert($(this).text())})
+    $(".contents").contents().each(function(){alert($(this).text())})
+    // отобразит и переходы строк и текст без тега 
+   }
+
+      // end
+  function endd() {
+    $(".end").parent().end().css({ border: "1px solid red" })
+  }
+
+  // Ajax-----------------------------------------------------------------------------
+
+  $(function($){
+    $('.btn').click(function(e){
+      e.preventDefault()
+    })
+  })
