@@ -1415,23 +1415,28 @@
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-center">
+          <div class="ajax-wrap col-md-12 text-center">
             <h2>Ajax</h2>
+            <a href="https://api.jquery.com/category/ajax/">Ajax методы</a>
             <img src="./images/synchron.jpg" width="90%"  alt=" ">
             <h2>Асинхронный запрос</h2>
             <img src="./images/asynchron.jpg" width="90%"  alt=" ">
-
-            <form action="">
-              <input type="text" name="name" placeholder="Name">
-              <input type="text" name="email" placeholder="Email">
+            <!-- Spiner loading -->
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            
+            <form id="contact-form" action="">
+              <input type="text" id="ajaxName" name="name" placeholder="Name">
+              <input type="text" id="ajaxEmail" name="email" placeholder="Email">
               <input type="text" name="subject" placeholder="Subject">
-              <textarea name="text"  cols="30" rows="10">Message</textarea>
-              <button class="btn">Отправить</button>
+              <textarea name="text"  cols="50" rows="4">Message</textarea>
+              <h3 class="ajax">Отправка</h3>
+              <input type="submit" id="btn">
+              <!-- <button class="btn">Отправить</button> -->
             </form>
             <ul>
-              <li class="each" id="each">
-                <h3>.each()</h3>
-                <p>вызывает заданную ф-ю для каждого елемента выборки</p>
+              <li class="serializeArray" id="serializeArray">
+                <h3>.serializeArray()</h3>
+                <p>вернет массив обьектов input формы со значением</p>
                 <a href="#each" onclick="eac()">.each()</a>
               </li>
             </ul>

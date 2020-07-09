@@ -1080,8 +1080,53 @@ function mapp() {
 
   // Ajax-----------------------------------------------------------------------------
 
+  // $(function($){
+  //   $('#btn').click(function(e){
+  //     e.preventDefault()
+  //     $('.lds-roller').fadeIn(500, function(){
+  //             //  отобразим спинер и по завершению ф-ю 
+  //       //  Отпроака в виде строки
+  //       // const result = 'name='+ $("#ajaxName").val() + 'email='+ $("#ajaxEmail").val()+ 'subject='+ $("input[name=subject]").val()+ 'text='+ $("textarea[name=text]").val()
+
+  //       //  Отпроака в виде массива обьектов
+  //       const result=$("#contact-form").serializeArray();
+
+  //       $ajax({
+  //         url:'https://jquery-tutorial-d6dae.firebaseio.com/', 
+  //         type:'POST',
+  //         data: result,
+  //         dataType:'json',
+  //         context: document.getElementById('ajax'),
+  //         success: function (data, status, jqXHR){
+  //           $(this).find('#ajas').fadeOut(1000, function(){
+  //             $(this).text('Добавлено!').fadeIn(300);
+  //           });
+  //           $(this).delay(1000).fadeOut(1000, function(){
+  //             $('ajax-wrap').append('<h3>'+ data.name +'</h3>' + '<p>'+data.text +'</p>')
+  //           });
+  //         },
+          
+  //       })
+        
+  //     })
+  //   })
+  // })
+
   $(function($){
-    $('.btn').click(function(e){
-      e.preventDefault()
+      $('#btn').click(function(e){
+        e.preventDefault()
+        const result=$("#contact-form").serializeArray();
+        // $get('https://jquery-tutorial-d6dae.firebaseio.com/',)
+        $.ajax({
+          url: 'https://jquery-tutorial-d6dae.firebaseio.com/test.json',
+          data: result,
+          success: function(data,status, jqXHR){
+             console.log('success' + data.name);
+             console.log('success' + data.text);
+           },
+        });
+      })
     })
-  })
+ 
+  
+  
