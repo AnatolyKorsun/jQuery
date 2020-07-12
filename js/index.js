@@ -771,17 +771,17 @@ function submi() {
   $("form").submit(function (e) {
     //отследим отправку формы
     e.preventDefault();
-    $('.btnsubmit').text($('.inpsubmit').val())
+    $(".btnsubmit").text($(".inpsubmit").val());
   });
 }
 
 // change
 function chang() {
-  $(".changename").change({ a: " hello ", b: " word " },function (e) {
-    const email =$('.changemail');
-    email.val($('.changename').val());
+  $(".changename").change({ a: " hello ", b: " word " }, function (e) {
+    const email = $(".changemail");
+    email.val($(".changename").val());
   });
-};
+}
 
 // События загрузки страницы-------------------------------------------------------
 // ready
@@ -796,40 +796,40 @@ function chang() {
 
 // unload
 // $(document).ready(function(){
-  // $(window).on( "unload", function(){
-  //   alert("Goodbye!");
-  // });
+// $(window).on( "unload", function(){
+//   alert("Goodbye!");
 // });
-$(document).on( "unload", function() {
+// });
+$(document).on("unload", function () {
   alert("unload()");
 });
 
 // События браузера--------------------------------------------------------------
 
 // error
-$( "#error" ).on( "error", function() {
-    alert( "Handler for .error() called." )
-  })
+$("#error").on("error", function () {
+  alert("Handler for .error() called.");
+});
 
-  // resize
-  $(window).trigger( "resize", function() {
-    alert( "resize" )
-  })
+// resize
+$(window).trigger("resize", function () {
+  alert("resize");
+});
 
-   // scroll
-  function scrol(){
-    const scrol = $('#scroll');
-    scrol.scroll($(window).scrollTop())
+// scroll
+function scrol() {
+  const scrol = $("#scroll");
+  scrol.scroll($(window).scrollTop());
+}
+
+$(window).scrollTop(function () {
+  if ($(this).scrollTop() > 500) {
+    $(".scrollTop").fadeIn(500);
   }
-
-   $( window ).scrollTop(function() {
-     if ($(this).scrollTop() >500){
-       $('.scrollTop').fadeIn(500)
-     }
-  })
-  $('.scrollTop').click(function(){
-    $(window).scrollTop(0)
-  })
+});
+$(".scrollTop").click(function () {
+  $(window).scrollTop(0);
+});
 
 // Универсальные методы--------------------------------------------------------
 
@@ -842,17 +842,24 @@ $( "#error" ).on( "error", function() {
 // })}
 
 function onn() {
-  $("#on").on( {mouseout:function(){alert('mouseout')}, click: function() {alert("click")
-                // Несколько ф-й в обьекте
-}})}
+  $("#on").on({
+    mouseout: function () {
+      alert("mouseout");
+    },
+    click: function () {
+      alert("click");
+      // Несколько ф-й в обьекте
+    },
+  });
+}
 
 // on делегирование
-$('.rootOn').on('click','a', function(e){
+$(".rootOn").on("click", "a", function (e) {
   // вешаем на родителя("свойство","для кого", ф-я)
-  e.preventDefault()
-  addNew = $('.rootOn');
+  e.preventDefault();
+  addNew = $(".rootOn");
   addNew.append($('<a href="#rootOn">.on() делегирование</a>'));
-})
+});
 // $('.rootOn').click('a', function(e){
 //   e.preventDefault()
 //   addNew = $('.rootOn');
@@ -860,44 +867,44 @@ $('.rootOn').on('click','a', function(e){
 // })
 
 // off
-$('#rootOff').on('click','a', function(e){
-  e.preventDefault()
-  addNew = $('#rootOff');
+$("#rootOff").on("click", "a", function (e) {
+  e.preventDefault();
+  addNew = $("#rootOff");
   addNew.append($('<a href="#rootOff">.off()</a>'));
-})
-function of(){
-  $('#rootOff').off()
-}  
+});
+function of() {
+  $("#rootOff").off();
+}
 
 // one
 function onee() {
-  $('#one').one('mouseenter',function(){
-    alert('one() один раз')
-  })
+  $("#one").one("mouseenter", function () {
+    alert("one() один раз");
+  });
 }
 
 // trigger
 function trigge() {
-  $('#trigger').mouseenter(function(){
-    alert('click trigger')
-  })
-  $('#trigger').trigger('mouseenter');
+  $("#trigger").mouseenter(function () {
+    alert("click trigger");
+  });
+  $("#trigger").trigger("mouseenter");
 }
 
 // userevent
 function userevent() {
-  $('#userevent').on('userevent',function(){
-    alert('userevent')
-  })
-  $('#userevent').trigger('userevent');
+  $("#userevent").on("userevent", function () {
+    alert("userevent");
+  });
+  $("#userevent").trigger("userevent");
 }
 
 // trigerHandler
 function trigerHandler() {
-  $('#trigerHandler').on('mouseenter',function(){
-    alert('mouseenter trigerHandler')
-  })
-  $('#trigerHandler').triggerHandler('mouseenter');
+  $("#trigerHandler").on("mouseenter", function () {
+    alert("mouseenter trigerHandler");
+  });
+  $("#trigerHandler").triggerHandler("mouseenter");
 }
 
 //Методы выбраных елементов-----------------------------------------------------------------------------
@@ -905,12 +912,12 @@ function trigerHandler() {
 // children
 function childre() {
   $("#childre").children().css({ border: "1px solid red" });
-  $("#childre").children('p').css({ border: "1px solid white" });
+  $("#childre").children("p").css({ border: "1px solid white" });
 }
 
 // closest
 function closes() {
-  $(".closest").closest('div').css({ border: "1px solid red" });
+  $(".closest").closest("div").css({ border: "1px solid red" });
 }
 
 // find
@@ -952,7 +959,9 @@ function paren() {
 
 // parentsUntil
 function parentsUnti() {
-  $(".parentsUntil").parentsUntil('.container').css({ border: "1px solid red" });
+  $(".parentsUntil")
+    .parentsUntil(".container")
+    .css({ border: "1px solid red" });
 }
 
 // prev
@@ -967,7 +976,7 @@ function prevAl() {
 
 // prevUntil
 function prevUnti() {
-  $(".prevUntil").prevUntil('#prevUntil').css({ border: "1px solid red" });
+  $(".prevUntil").prevUntil("#prevUntil").css({ border: "1px solid red" });
 }
 
 // sibling
@@ -986,11 +995,18 @@ function eqq() {
 // filter
 function filte() {
   // $(".filter").children().filter('.filtr').css({ border: "1px solid red" });
-                          //по какому селектору фильтровать
+  //по какому селектору фильтровать
   // $(".filter").children().filter(function(index){if(index%2 === 0){ return true}}).css({ border: "1px solid red" });
-                          // ф-я для каждого елемента для фильтрации  
-                          // this укажет на елемент
-  $(".filter").children().filter(function(index){{ return $(this).attr('class') === 'filtr'}}).css({ border: "1px solid red" });
+  // ф-я для каждого елемента для фильтрации
+  // this укажет на елемент
+  $(".filter")
+    .children()
+    .filter(function (index) {
+      {
+        return $(this).attr("class") === "filtr";
+      }
+    })
+    .css({ border: "1px solid red" });
 }
 
 // first
@@ -1000,133 +1016,220 @@ function firs() {
 
 // has
 function hass() {
- $("section").has(".hass").css({ border: "1px solid red" })
+  $("section").has(".hass").css({ border: "1px solid red" });
 }
 
 // is
 function iss() {
-  if($(".is").children().is(".iss")){
-    alert('yes')
+  if ($(".is").children().is(".iss")) {
+    alert("yes");
   }
- }
+}
 
- // last
+// last
 function las() {
-  $(".last").children().last().css({ border: "1px solid red" })
- }
+  $(".last").children().last().css({ border: "1px solid red" });
+}
 
-  // not
+// not
 function nott() {
   // $(".not").children().not('.nott').css({ border: "1px solid red" })
   // $(".not").children().not('h3, p').css({ border: "1px solid red" })
-  $(".not").children().not(function(index){return index%2 === 0}).css({ border: "1px solid red" })
-                          // ф-я для каждого елемента для фильтрации  
-                          //true - елемент исключается
- } 
+  $(".not")
+    .children()
+    .not(function (index) {
+      return index % 2 === 0;
+    })
+    .css({ border: "1px solid red" });
+  // ф-я для каждого елемента для фильтрации
+  //true - елемент исключается
+}
 
-  // slice
+// slice
 function slic() {
-  $(".slice").children().slice(0,2).css({ border: "1px solid red" })
-                        // slice(индекс начала выборкиб, индекс конца)
-                        // slice(индекс начала выборкиб, нет второго выберет до конца)
- }
+  $(".slice").children().slice(0, 2).css({ border: "1px solid red" });
+  // slice(индекс начала выборкиб, индекс конца)
+  // slice(индекс начала выборкиб, нет второго выберет до конца)
+}
 
 //  Методы циклической обработки выборки--------------------------------------------------
 
- // each
- function eac() {
+// each
+function eac() {
   // $(".each").children().each(function(index){return index%2 === 0}).css({ border: "1px solid red" })
-  $(".each").children().each(function(index,el){
-    const width = $(el).width()
-    $(el).text('Ширина елемента ' + width)
- })
+  $(".each")
+    .children()
+    .each(function (index, el) {
+      const width = $(el).width();
+      $(el).text("Ширина елемента " + width);
+    });
 }
 
 // map
 function mapp() {
- $('.map').children().map(function(ind,el){
+  $(".map")
+    .children()
+    .map(function (ind, el) {
       // console.log($(this));
       //this в ф-и равно елементу
       // console.log($(el));
-      return $(this).text($(this).text() + ' :)')
-  });
+      return $(this).text($(this).text() + " :)");
+    });
 }
 
 // Полезные методы----------------------------------------------------------------
 
-  // add
-  function ad() {
-    $(".add").add('.row').css({ border: "1px solid red" })
-   }
+// add
+function ad() {
+  $(".add").add(".row").css({ border: "1px solid red" });
+}
 
-     // andSelf
-  function andSel() {
-    $(".andSelf").parent().css({ border: "1px solid red" }).andSelf().css({ border: "1px solid black" })
-    //Выбрали елемент .переместились к роодителю . и добавили сам елемент с которого начали
-   }
+// andSelf
+function andSel() {
+  $(".andSelf")
+    .parent()
+    .css({ border: "1px solid red" })
+    .andSelf()
+    .css({ border: "1px solid black" });
+  //Выбрали елемент .переместились к роодителю . и добавили сам елемент с которого начали
+}
 
-   
-     // contents
-  function content() {
-    // $(".contents").children().each(function(){alert($(this).text())})
-    $(".contents").contents().each(function(){alert($(this).text())})
-    // отобразит и переходы строк и текст без тега 
-   }
+// contents
+function content() {
+  // $(".contents").children().each(function(){alert($(this).text())})
+  $(".contents")
+    .contents()
+    .each(function () {
+      alert($(this).text());
+    });
+  // отобразит и переходы строк и текст без тега
+}
 
-      // end
-  function endd() {
-    $(".end").parent().end().css({ border: "1px solid red" })
-  }
+// end
+function endd() {
+  $(".end").parent().end().css({ border: "1px solid red" });
+}
 
-  // Ajax-----------------------------------------------------------------------------
+// Ajax-----------------------------------------------------------------------------
 
-  // $(function($){
-  //   $('#btn').click(function(e){
-  //     e.preventDefault()
-  //     $('.lds-roller').fadeIn(500, function(){
-  //             //  отобразим спинер и по завершению ф-ю 
-  //       //  Отпроака в виде строки
-  //       // const result = 'name='+ $("#ajaxName").val() + 'email='+ $("#ajaxEmail").val()+ 'subject='+ $("input[name=subject]").val()+ 'text='+ $("textarea[name=text]").val()
+// $(function($){
+//   $('#btn').click(function(e){
+//     e.preventDefault()
+//     $('.lds-roller').fadeIn(500, function(){
+//             //  отобразим спинер и по завершению ф-ю
+//       //  Отпроака в виде строки
+//       // const result = 'name='+ $("#ajaxName").val() + 'email='+ $("#ajaxAge").val()
 
-  //       //  Отпроака в виде массива обьектов
-  //       const result=$("#contact-form").serializeArray();
+//       //  Отпроака в виде массива обьектов
+//       const result=$("#contact-form").serializeArray();
+//       console.log(result);
+      
+//       $.ajax({
+//         url : 'https://test-users-api.herokuapp.com/users',// адрес отправки
+//         type : 'POST',  //тип
+//         data : result,  // передаваемые данные
+//         dataType:'json',// ожидаем ответ в .... Может xml, 
+//                           //script - запрс скрипта на стороне сервера , получит скрипт и сразу выполнит 
+//                           //html - запрос html дпнных, если будет скрипт он отработает после добавления на стр.
+//         context: document.getElementById('message'), // что будет привязано в this
+//         beforeSend: function(jqXHR){
+//             alert('beforeSend')
+//         }, //функция перед отправкой вход обект для модификации заголовков
+//         cache: true, // если false браузер не будет кешировать
+//                       // для  type : 'GET' и cache: false  к строке добавит текущее время
+//         complete: function(jqXHR, status){ // функция по завершению запроса после success и error
+//           alert('complete')
+//         },
+//         contantType: 'application/x-www-form-urlencoded; charset=UTF-8', //тип отправленного контента, если просто текст то 'text/plain'
+//         headers:{ //добавит новые заголовки
+//           header:'Some text'
+//         },
+//         processData:true, // все передаваемые данные преобразуются в строку, 
+//                           // false- массив обектов
+//         timeOut:2000, //время ожидания ответа от сервера, по истичению error
+//         success: function (data, status, jqXHR){
+//           alert('success')
+//           console.log(data);
+//           $('.lds-roller').fadeOut(1000),
+//           $('#message').append('<h3>'+ data.data.name +'</h3>' + '<p>'+data.data.age +'</p>')
+//         },// функция при успешном выполнении
+//         error: function(){
+//           alert('error')
+//         }
+//       })
+//     });
+// });
+// })
 
-  //       $ajax({
-  //         url:'https://jquery-tutorial-d6dae.firebaseio.com/', 
-  //         type:'POST',
-  //         data: result,
-  //         dataType:'json',
-  //         context: document.getElementById('ajax'),
-  //         success: function (data, status, jqXHR){
-  //           $(this).find('#ajas').fadeOut(1000, function(){
-  //             $(this).text('Добавлено!').fadeIn(300);
-  //           });
-  //           $(this).delay(1000).fadeOut(1000, function(){
-  //             $('ajax-wrap').append('<h3>'+ data.name +'</h3>' + '<p>'+data.text +'</p>')
-  //           });
-  //         },
-          
-  //       })
-        
-  //     })
-  //   })
-  // })
+// https://anatolykorsun.github.io/goit-fe-course/js/module-10/ проверить выполнение
 
-  $(function($){
-      $('#btn').click(function(e){
-        e.preventDefault()
-        const result=$("#contact-form").serializeArray();
-        // $get('https://jquery-tutorial-d6dae.firebaseio.com/',)
-        $.ajax({
-          url: 'https://jquery-tutorial-d6dae.firebaseio.com/test.json',
-          data: result,
-          success: function(data,status, jqXHR){
-             console.log('success' + data.name);
-             console.log('success' + data.text);
-           },
-        });
+// fetch -------------------------------------------------------------------------------
+// $(function ($) {
+//     $("#btn").click(function (e) {
+//       e.preventDefault();
+//   fetch(`https://test-users-api.herokuapp.com/users`, {
+//     method: "GET"
+//   })
+//     .then(response => {
+//       if (response.ok) {
+//         alert("success");
+//         return response.json()
+//       }
+//     })
+//     .then(data =>{console.log(data);})
+//     .catch(error => console.log("Erroe:", error));
+// })})
+
+// ajaxSetup---------------------------------------------------------------------------
+
+$(function($){
+  $('#btn').click(function(e){
+    e.preventDefault()
+    $('.lds-roller').fadeIn(500, function(){
+            //  отобразим спинер и по завершению ф-ю
+      //  Отпроака в виде строки
+      // const result = 'name='+ $("#ajaxName").val() + 'email='+ $("#ajaxAge").val()
+
+      //  Отпроака в виде массива обьектов
+      const result=$("#contact-form").serializeArray();
+
+      $.ajaxSetup({
+        url : 'https://test-users-api.herokuapp.com/users',// адрес отправки
+        type : 'POST',  //тип
+        data : result,  // передаваемые данные
+        dataType:'json',// ожидаем ответ в .... Может xml, 
+                          //script - запрс скрипта на стороне сервера , получит скрипт и сразу выполнит 
+                          //html - запрос html дпнных, если будет скрипт он отработает после добавления на стр.
+        context: document.getElementById('message'), // что будет привязано в this
+        beforeSend: function(jqXHR){
+            alert('beforeSend')
+        }, //функция перед отправкой вход обект для модификации заголовков
+        cache: true, // если false браузер не будет кешировать
+                      // для  type : 'GET' и cache: false  к строке добавит текущее время
+        complete: function(jqXHR, status){ // функция по завершению запроса после success и error
+          alert('complete')
+        },
+        contantType: 'application/x-www-form-urlencoded; charset=UTF-8', //тип отправленного контента, если просто текст то 'text/plain'
+        headers:{ //добавит новые заголовки
+          header:'Some text'
+        },
+        processData:true, // все передаваемые данные преобразуются в строку, 
+                          // false- массив обектов
+        timeOut:2000, //время ожидания ответа от сервера, по истичению error
+        success: function (data, status, jqXHR){
+          alert('success')
+          console.log(data);
+          $('.lds-roller').fadeOut(1000),
+          $('#message').append('<h3>'+ data.data.name +'</h3>' + '<p>'+data.data.age +'</p>')
+        },// функция при успешном выполнении
+        error: function(){
+          alert('error')
+        }
       })
-    })
- 
-  
-  
+
+      $.ajax({
+        data : result, //только data
+      });
+    });
+});
+})

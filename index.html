@@ -1423,21 +1423,30 @@
             <img src="./images/asynchron.jpg" width="90%"  alt=" ">
             <!-- Spiner loading -->
             <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-            
+            <h3 id="message"> Ajax</div>
             <form id="contact-form" action="">
-              <input type="text" id="ajaxName" name="name" placeholder="Name">
-              <input type="text" id="ajaxEmail" name="email" placeholder="Email">
-              <input type="text" name="subject" placeholder="Subject">
-              <textarea name="text"  cols="50" rows="4">Message</textarea>
-              <h3 class="ajax">Отправка</h3>
+              <input type="text" id="ajaxName" name="name" placeholder="Имя">
+              <input type="text" id="ajaxAge" name="age" placeholder="Возраст">
               <input type="submit" id="btn">
               <!-- <button class="btn">Отправить</button> -->
             </form>
+            <a href="https://anatolykorsun.github.io/goit-fe-course/js/module-10/">проверить выполнение</a>
+
             <ul>
               <li class="serializeArray" id="serializeArray">
                 <h3>.serializeArray()</h3>
                 <p>вернет массив обьектов input формы со значением</p>
-                <a href="#each" onclick="eac()">.each()</a>
+                <a href="#each">.each()</a>
+              </li>
+              <li class="serialize" id="serialize">
+                <h3>.serialize()</h3>
+                <p>вернет обьекты input формы со значением</p>
+                <a href="#each">.each()</a>
+              </li>
+              <li class="ajaxSetup" id="ajaxSetup">
+                <h3>.ajaxSetup()</h3>
+                <p>вынос всех методов с запроса ajax. в ajax ост только data</p>
+                <a href="#ajaxSetup">.ajaxSetup()</a>
               </li>
             </ul>
           </div>
