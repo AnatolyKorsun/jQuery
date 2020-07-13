@@ -1423,37 +1423,103 @@
             <img src="./images/asynchron.jpg" width="90%"  alt=" ">
             <!-- Spiner loading -->
             <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-            <h3 id="message"> Ajax</div>
+            <h3 id="message"> Ajax</h3>
             <form id="contact-form" action="">
               <input type="text" id="ajaxName" name="name" placeholder="Имя">
               <input type="text" id="ajaxAge" name="age" placeholder="Возраст">
               <input type="submit" id="btn">
-              <!-- <button class="btn">Отправить</button> -->
             </form>
             <a href="https://anatolykorsun.github.io/goit-fe-course/js/module-10/">проверить выполнение</a>
-
             <ul>
               <li class="serializeArray" id="serializeArray">
                 <h3>.serializeArray()</h3>
                 <p>вернет массив обьектов input формы со значением</p>
-                <a href="#each">.each()</a>
               </li>
               <li class="serialize" id="serialize">
                 <h3>.serialize()</h3>
                 <p>вернет обьекты input формы со значением</p>
-                <a href="#each">.each()</a>
               </li>
               <li class="ajaxSetup" id="ajaxSetup">
                 <h3>.ajaxSetup()</h3>
                 <p>вынос всех методов с запроса ajax. в ajax ост только data</p>
-                <a href="#ajaxSetup">.ajaxSetup()</a>
+              </li>
+              <li class="get" id="get">
+                <h3>$.get('server adress',result, function(data, status, jqXHR){}, 'json' );</h3>
+                <p>Запрос на сервер методом get без  перезагрузки стр.</p>
+              </li>
+              <li class="post" id="post">
+                <h3>$.post('server adress',result, function(data, status, jqXHR){}, 'json');</h3>
+                <p>Запрос на сервер методом POST без перезагрузки стр.</p>
+              </li>
+              <li class="getJSON" id="getJSON">
+                <h3>$.getJSON('server adress',result, function(data, status, jqXHR){});</h3>
+                <p>Запрос на сервер методом get ожидая JSON без  перезагрузки стр..</p>
+              </li>
+              <li class="getScript" id="getScript">
+                <h3>$.getScript('server adress',result, function(data, status, jqXHR){});</h3>
+                <p>Запрос на сервер методом get ожидая JSON без  перезагрузки стр..</p>
+              </li>
+              <li class="param" id="param">
+                <h3>.param()</h3>
+                <p>Для автоматического преобразования массива обьектов в строку запроса сервера</p>
+              </li>
+            </ul>
+            <h3>Обработчики AJAX событий</h3>
+            <ul>
+              <li class="ajaxSend" id="ajaxSend">
+                <h3>.ajaxSend()</h3>
+                <p>отработает перед отправкой  запроса</p>
+              </li>
+              <li class="ajaxComplete" id="ajaxComplete">
+                <h3>.ajaxComplete()</h3>
+                <p>отработает перед отправкой  запроса</p>
+              </li>
+              <li class="ajaxSuccess" id="ajaxSuccess">
+                <h3>.ajaxSuccess()</h3>
+                <p>регистрирут ф-ю выполн при успешном запросе</p>
+              </li>
+              <li class="ajaxError" id="ajaxError">
+                <h3>.ajaxError()</h3>
+                <p>регистрирут ф-ю выполн при неудачном запросе</p>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-
+    <!-- Утилы -->
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="ajax-wrap col-md-12 text-center">
+            <h2>Утилы</h2>
+            <a href="https://api.jquery.com/category/utilities/">Утилы</a>
+            <ul>
+              <li>
+                <h3 id="contains">.contains()</h3>
+                <p>Проверяет присутствие елементов внутри других</p>
+                <a href="#contains" onclick="contain()">.contains()</a>
+              </li>
+              <li>
+                <h3 id="data">.data()</h3>
+                <p>Для хранения и работы с определенными данными привязаных к елементу</p>
+                <a href="#data" onclick="dat()">.data()</a>
+              </li>
+              <li>
+                <h3 id="eachh">.each()</h3>
+                <p>Для работы с обьектами и массивами. не .each() для работы с каждым елементом выборки</p>
+                <a href="#eachh" onclick="eachh()">.each()</a>
+              </li> 
+              <li>
+                <h3 id="extend">.extend()</h3>
+                <p>Для соединения двух обьектов. если у второго такой же ключ, перезапишет новое значение в первый обьект</p>
+                <a href="#extend" onclick="exten()">.extend()</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="./js/jquery-3.5.1.js"></script>
     <script src="./js/index.js"></script>
   </body>

@@ -1123,13 +1123,13 @@ function endd() {
 //       //  Отпроака в виде массива обьектов
 //       const result=$("#contact-form").serializeArray();
 //       console.log(result);
-      
+
 //       $.ajax({
 //         url : 'https://test-users-api.herokuapp.com/users',// адрес отправки
 //         type : 'POST',  //тип
 //         data : result,  // передаваемые данные
-//         dataType:'json',// ожидаем ответ в .... Может xml, 
-//                           //script - запрс скрипта на стороне сервера , получит скрипт и сразу выполнит 
+//         dataType:'json',// ожидаем ответ в .... Может xml,
+//                           //script - запрс скрипта на стороне сервера , получит скрипт и сразу выполнит
 //                           //html - запрос html дпнных, если будет скрипт он отработает после добавления на стр.
 //         context: document.getElementById('message'), // что будет привязано в this
 //         beforeSend: function(jqXHR){
@@ -1144,7 +1144,7 @@ function endd() {
 //         headers:{ //добавит новые заголовки
 //           header:'Some text'
 //         },
-//         processData:true, // все передаваемые данные преобразуются в строку, 
+//         processData:true, // все передаваемые данные преобразуются в строку,
 //                           // false- массив обектов
 //         timeOut:2000, //время ожидания ответа от сервера, по истичению error
 //         success: function (data, status, jqXHR){
@@ -1182,54 +1182,261 @@ function endd() {
 
 // ajaxSetup---------------------------------------------------------------------------
 
+// $(function($){
+//   $('#btn').click(function(e){
+//     e.preventDefault()
+//     $('.lds-roller').fadeIn(500, function(){
+//             //  отобразим спинер и по завершению ф-ю
+//       //  Отпроака в виде строки
+//       // const result = 'name='+ $("#ajaxName").val() + 'email='+ $("#ajaxAge").val()
+
+//       //  Отпроака в виде массива обьектов
+//       const result=$("#contact-form").serializeArray();
+
+//       $.ajaxSetup({
+//         url : 'https://test-users-api.herokuapp.com/users',// адрес отправки
+//         type : 'POST',  //тип
+//         data : result,  // передаваемые данные
+//         dataType:'json',// ожидаем ответ в .... Может xml,
+//                           //script - запрс скрипта на стороне сервера , получит скрипт и сразу выполнит
+//                           //html - запрос html дпнных, если будет скрипт он отработает после добавления на стр.
+//         context: document.getElementById('message'), // что будет привязано в this
+//         beforeSend: function(jqXHR){
+//             alert('beforeSend')
+//         }, //функция перед отправкой вход обект для модификации заголовков
+//         cache: true, // если false браузер не будет кешировать
+//                       // для  type : 'GET' и cache: false  к строке добавит текущее время
+//         complete: function(jqXHR, status){ // функция по завершению запроса после success и error
+//           alert('complete')
+//         },
+//         contantType: 'application/x-www-form-urlencoded; charset=UTF-8', //тип отправленного контента, если просто текст то 'text/plain'
+//         headers:{ //добавит новые заголовки
+//           header:'Some text'
+//         },
+//         processData:true, // все передаваемые данные преобразуются в строку,
+//                           // false- массив обектов
+//         timeOut:2000, //время ожидания ответа от сервера, по истичению error
+//         success: function (data, status, jqXHR){
+//           alert('success')
+//           console.log(data);
+//           $('.lds-roller').fadeOut(1000),
+//           $('#message').append('<h3>'+ data.data.name +'</h3>' + '<p>'+data.data.age +'</p>')
+//         },// функция при успешном выполнении
+//         error: function(){
+//           alert('error')
+//         }
+//       })
+
+//       $.ajax({
+//         data : result, //только data
+//       });
+//     });
+// });
+// })
+
+// get----------------------------------------------------------------------------
+// $(function($){
+//   $('#btn').click(function(e){
+//     e.preventDefault()
+//     $('.lds-roller').fadeIn(500, function(){
+//       const result=$("#contact-form").serializeArray();
+
+//       const jqXHR = $.get('https://test-users-api.herokuapp.com/users',result, function(data, status, jqXHR){alert('after send')}, 'json' );
+//       // адрес, отправляемые данные, функция колбек с данными, статусом,jqXHR  вызов после ответа сервера, ожидаемый тип файлов
+
+//       jqXHR.done(function(){alert('done');console.log(jqXHR)});
+//       // в результате успешного запроса
+//       jqXHR.fail(function(){alert('fail')});
+//       // в результате неуспешного запроса
+//       jqXHR.always(function(){alert('always')});
+//       // в результате неуспешного и успешного запроса
+//       jqXHR.then(function(){alert('then succes')},function(){alert('then error')} );
+//       // задает обработчики при успешном запросе первая ф-я, неуспешном в трая ф-я
+//     });
+// });
+// })
+
+// post-----------------------------------------------------------------------------
+
+// $(function($){
+//   $('#btn').click(function(e){
+//     e.preventDefault()
+//     $('.lds-roller').fadeIn(500, function(){
+//       const result=$("#contact-form").serializeArray();
+
+//       const jqXHR = $.post('https://test-users-api.herokuapp.com/users',result, function(data, status, jqXHR){alert('after send')}, 'json');
+//       // адрес, отправляемые данные, функция колбек с данными, статусом,jqXHR  вызов после ответа сервера, тип ожидаемых данных
+//       jqXHR.done(function(){alert('done');console.log(jqXHR)});
+//       // в результате успешного запроса
+//       jqXHR.fail(function(){alert('fail')});
+//       // в результате неуспешного запроса
+//       jqXHR.always(function(){alert('always')});
+//       // в результате неуспешного и успешного запроса
+//       jqXHR.then(function(){alert('then succes')},function(){alert('then error')} );
+//       // задает обработчики при успешном запросе первая ф-я, неуспешном в трая ф-я
+//     });
+// });
+// })
+
+// getJSON---------------------------------------------------------------------------
+
+// $(function($){
+//   $('#btn').click(function(e){
+//     e.preventDefault()
+//     $('.lds-roller').fadeIn(500, function(){
+//       const result=$("#contact-form").serializeArray();
+
+//       const jqXHR = $.getJSON('https://test-users-api.herokuapp.com/users',result, function(data, status, jqXHR){alert('after send')});
+//       // адрес, отправляемые данные, функция колбек с данными, статусом,jqXHR  вызов после ответа сервера
+//       jqXHR.done(function(){alert('done');console.log(jqXHR)});
+//       // в результате успешного запроса
+//       jqXHR.fail(function(){alert('fail')});
+//       // в результате неуспешного запроса
+//       jqXHR.always(function(){alert('always')});
+//       // в результате неуспешного и успешного запроса
+//       jqXHR.then(function(){alert('then succes')},function(){alert('then error')} );
+//       // задает обработчики при успешном запросе первая ф-я, неуспешном в трая ф-я
+//     });
+// });
+// })
+
+// getScript------------------------------------------------------------------------
+
+// $(function($){
+//     $('#btn').click(function(e){
+//       e.preventDefault()
+//       $('.lds-roller').fadeIn(500, function(){
+//         const result=$("#contact-form").serializeArray();
+
+//         const jqXHR = $.getScript('https://test-users-api.herokuapp.com/users', function(data, status, jqXHR){alert('after send')});
+//         // адрес,  функция колбек с данными, статусом,jqXHR  вызов после ответа сервера
+//         jqXHR.done(function(){alert('done');console.log(jqXHR)});
+//         // в результате успешного запроса
+//         jqXHR.fail(function(){alert('fail')});
+//         // в результате неуспешного запроса
+//         jqXHR.always(function(){alert('always')});
+//         // в результате неуспешного и успешного запроса
+//         jqXHR.then(function(){alert('then succes')},function(){alert('then error')} );
+//         // задает обработчики при успешном запросе первая ф-я, неуспешном в трая ф-я
+//       });
+//   });
+//   })
+
+// load-----------------------------------------------------------------------------
+
+// $(function($){
+//     $('#btn').click(function(e){
+//       e.preventDefault()
+//       const result=$("#contact-form").serializeArray();
+
+//       $('#message').load('https://test-users-api.herokuapp.com/users/',result, function(data, status){alert('after send')},'json');
+
+//       // const jqXHR = $.get('https://test-users-api.herokuapp.com/users/5f0c83bac3f9720014b93175',result, function(data, status, jqXHR){alert('after send')},'JSON');
+//       // адрес,  функция колбек с данными, статусом,jqXHR  вызов после ответа сервера
+//       // ф-я load() jqXHR не возвращает
+//       // запрос методом POST
+//   });
+//   })
+
+// .param()-------------------------------------------------------------------------
+// $(function ($) {
+//   $("#btn").click(function (e) {
+//     e.preventDefault();
+//     const result = $("#contact-form").serializeArray();
+//     alert(result);
+//     alert($.param(result));
+//   });
+// });
+
+// Обработчики событий AJAX-----------------------------------------------------
+// .ajaxSend()
+// .ajaxComplete()
+// ajaxSuccess
+// ajaxError
+
 $(function($){
+
+  $(document).ajaxSend(function(event, XHR, ajaxOption){alert('ajaxSend')})
+  //ajaxOption опции ajaxSetup
+  // обработчик вешаем документ
+  //отработает перед отправкой  запроса
+
+  $(document).ajaxComplete(function(event, XHR, ajaxOption){alert('ajaxComplete')})
+  // регистрирут ф-ю выполн по завершению запроса
+  //отработает перед отправкой  запроса
+
+  $(document).ajaxSuccess(function(event, XHR, ajaxOption){alert('ajaxSuccess')})
+  // регистрирут ф-ю выполн при успешном запросе
+
+  $(document).ajaxError(function(event, XHR, ajaxOption){alert('ajaxSuccess')})
+  // регистрирут ф-ю выполн при неудачном запросе
+  
   $('#btn').click(function(e){
-    e.preventDefault()
-    $('.lds-roller').fadeIn(500, function(){
-            //  отобразим спинер и по завершению ф-ю
-      //  Отпроака в виде строки
-      // const result = 'name='+ $("#ajaxName").val() + 'email='+ $("#ajaxAge").val()
-
-      //  Отпроака в виде массива обьектов
-      const result=$("#contact-form").serializeArray();
-
-      $.ajaxSetup({
-        url : 'https://test-users-api.herokuapp.com/users',// адрес отправки
-        type : 'POST',  //тип
-        data : result,  // передаваемые данные
-        dataType:'json',// ожидаем ответ в .... Может xml, 
-                          //script - запрс скрипта на стороне сервера , получит скрипт и сразу выполнит 
-                          //html - запрос html дпнных, если будет скрипт он отработает после добавления на стр.
-        context: document.getElementById('message'), // что будет привязано в this
-        beforeSend: function(jqXHR){
-            alert('beforeSend')
-        }, //функция перед отправкой вход обект для модификации заголовков
-        cache: true, // если false браузер не будет кешировать
-                      // для  type : 'GET' и cache: false  к строке добавит текущее время
-        complete: function(jqXHR, status){ // функция по завершению запроса после success и error
-          alert('complete')
-        },
-        contantType: 'application/x-www-form-urlencoded; charset=UTF-8', //тип отправленного контента, если просто текст то 'text/plain'
-        headers:{ //добавит новые заголовки
-          header:'Some text'
-        },
-        processData:true, // все передаваемые данные преобразуются в строку, 
-                          // false- массив обектов
-        timeOut:2000, //время ожидания ответа от сервера, по истичению error
-        success: function (data, status, jqXHR){
-          alert('success')
-          console.log(data);
-          $('.lds-roller').fadeOut(1000),
-          $('#message').append('<h3>'+ data.data.name +'</h3>' + '<p>'+data.data.age +'</p>')
-        },// функция при успешном выполнении
-        error: function(){
-          alert('error')
-        }
-      })
-
-      $.ajax({
-        data : result, //только data
-      });
+        e.preventDefault()
+        $('.lds-roller').fadeIn(500, function(){
+          const result=$("#contact-form").serializeArray();
+    
+          const jqXHR = $.get('https://test-users-api.herokuapp.com/users',result, function(data, status, jqXHR){alert('after send')}, 'json' );
+        });
     });
-});
+ 
 })
+
+// Утилы---------------------------------------------------------------------------
+
+// contains
+function contain() {
+  const elem = document.getElementById('contains');
+  if($.contains(document.body, elem)){
+              // в котором ищем, какой елемент
+    $(elem).css({'color':'red'})
+  } 
+};
+
+// data
+// function dat() {
+//   const elem = $('.data');
+//   $.data(elem,'dataKey','hello word')
+//       //елемент привязки данных, ключ данных, сохраняемые/ изменяемые данные
+//   console.log($.data(elem, 'dataKey'));
+//     // елемент привязки данных, ключ данных(третего параметра нет-вернет )
+// };
+
+function dat() {
+  const elem = $('.data');
+  const value ={
+    one: 10,
+    two:20
+  }
+  $.data(elem,'dataKey',value)
+      //елемент привязки данных, ключ данных, сохраняемые/ изменяемые данные
+  alert($.data(elem, 'dataKey').one);
+    // елемент привязки данных, ключ данных(третего параметра нет-вернет ).свойство обьекта
+}
+
+// each
+function eachh() {
+  // const arr =['one', 'two', 'three']
+  // $.each(arr, function(index, value){alert(value)})
+  // // массив для перебора, ф-я для каждого елемента
+
+  const obj ={'one':1 , 'two':2, 'three':3}
+  $.each(obj, function(index, value){alert(value + index)})
+  // массив для перебора, ф-я для каждого елемента
+};
+
+// extend
+function exten() {
+  const obj1 ={'one':1 , 'two':2, 'three':{val1:'Hello', val2:'word', val3:'!'}}
+  const obj2 ={'one':100 , 'two':'some text', 'three':{val1:'Ben', val2:'Bob'}}
+
+//  const result = $.extend(obj1, obj2)
+//   //в первый обьект перезапишет/добавит второй
+//   //обьектов сколько угодно
+//   //  в obj1.three перезапишет весь обьект новым
+
+ const result = $.extend(true,obj1, obj2)
+  // рекурсивное обьединение в obj1.three.val3 останется
+ console.log(result);
+ alert(JSON.stringify(result))
+};
