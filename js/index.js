@@ -1440,3 +1440,81 @@ function exten() {
  console.log(result);
  alert(JSON.stringify(result))
 };
+
+// globalEval
+let someVar = 50;
+function globalEva() {
+  let someVar = 05;
+  console.log(someVar);
+$.globalEval('alert(someVar) ')
+$.globalEval('someVar= 555;')
+              // скрипт для выполнения
+console.log(someVar);
+$.globalEval('alert(someVar) ')
+console.log(someVar);
+};
+
+
+// grep
+function gre(){
+  const arr =[1,2,3,4,5,6,7,8,9];
+  function sortFunction(el, ind) {
+    if(el === 4 || ind === 2){
+      return false
+    };
+    return true
+  };
+  const result =$.grep(arr, sortFunction, true);
+  //можно ф-ю внутри     true- вернет массив неудовлетвор условия  false по умолч
+  alert(result);
+}
+
+// inArray
+function inArra(){
+ const arr =[1,'bob', 'sem']
+ alert($.inArray('bob',arr))
+    // что ищем , массив
+}
+
+// isArray
+function isArra(){
+  const arr =[1,'bob', 'sem']
+  alert($.isArray(arr))
+ }
+
+//  isEmptyObject
+function isEmptyObjec(){
+  // const arr =[1,'bob', 'sem'];
+  // const arr =[];
+  const arr ={};
+  // const arr ={'one':1};
+  alert($.isEmptyObject(arr))
+ }
+
+ //  isFunction
+function isFunctio(){
+  const arr ={};
+   function func(){}
+  alert($.isFunction(func))
+ }
+
+ //  isNumeric
+function isNumeri(){
+  // alert($.isNumeric('as'))
+  // alert($.isNumeric(10))
+  alert($.isNumeric('10'))
+ }
+
+ //  isPlainObject
+function isPlainObjec(){
+  // alert($.isPlainObject({'one':'one'}))
+  // alert($.isPlainObject(new Object()))
+  alert($.isPlainObject({}))
+ }
+
+  //  isWindow
+function isWindo(){
+  // alert($.isWindow({}));
+  // alert($.isWindow(document));
+  alert($.isWindow(window));
+ }
