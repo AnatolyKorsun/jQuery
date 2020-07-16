@@ -1348,50 +1348,124 @@ function endd() {
 //   });
 // });
 
+//Calbacks--------------------------------------------------------------------
+ $(function($){
+    $('#btn').click(function(e){
+      e.preventDefault()
+      // const myCallback= $.Callbacks();
+      // обьект наблюдатель ждет добавления ф-й потом вызова на исполн.   
+      // const myCallback= $.Callbacks('once');
+      // Настройки once- отработает один раз  при многократном вызове fire 
+      // const myCallback= $.Callbacks('memory');
+      // memory - запомнит значения предидущих вызовов??? Выполнятся в контексте предидущих вызовов
+      // const myCallback= $.Callbacks('unique');
+      // unique - одну и ту же функцию нельзя добавить второй раз в Callback
+      //Несколько через пробел
+      // const myCallback= $.Callbacks('unique memory');
+      const myCallback= $.Callbacks('stopOnFalse');
+      //stopOnFalse - ели одна из функций фернет false то остальные вызываться не будут
+
+      $('.lds-roller').fadeIn(500, function(){
+        const result=$("#contact-form").serializeArray();
+        const jqXHR = $.get('https://test-users-api.herokuapp.com/users/',result, 
+        function(data, status, jqXHR){
+          if(data.data){
+            myCallback.add(calbackFunction)
+            //при выполнении условия добавляем ф-ю в колбек
+          } 
+          if(status == 'success'){
+            myCallback.add(calbackFunct)
+            //при выполнении условия добавляем ф-ю в колбек
+          }
+          if(true){
+            myCallback.add(calbackFunc)
+            //при выполнении условия добавляем ф-ю в колбек
+          };
+
+          // myCallback.empty();
+          //удалит все ф-и callback
+          myCallback.remove(calbackFunction);
+          // удалить  только функцию
+          alert('after send')
+          myCallback.fire(10);
+          myCallback.fire(20);
+          // после вызов всех добавленых ф-й callback 
+          //fire(значение что войдет в ф-ии 1,2,3 - val1)
+        }
+          , 'json' );
+      });
+  });
+
+  //Ф-ии добавляемые в Callback 
+  function calbackFunction(val1){
+    alert('Функция 1 ' + val1)
+    return false 
+  };
+  function calbackFunct(val1){
+    alert('Функция 2 ' + val1)
+  };
+  function calbackFunc(val1){
+    alert('Функция 3 ' + val1)
+  };
+  })
+  
 // Обработчики событий AJAX-----------------------------------------------------
 // .ajaxSend()
 // .ajaxComplete()
 // ajaxSuccess
 // ajaxError
 
-$(function($){
+// $(function ($) {
+//   $(document).ajaxSend(function (event, XHR, ajaxOption) {
+//     alert("ajaxSend");
+//   });
+//   //ajaxOption опции ajaxSetup
+//   // обработчик вешаем документ
+//   //отработает перед отправкой  запроса
 
-  $(document).ajaxSend(function(event, XHR, ajaxOption){alert('ajaxSend')})
-  //ajaxOption опции ajaxSetup
-  // обработчик вешаем документ
-  //отработает перед отправкой  запроса
+//   $(document).ajaxComplete(function (event, XHR, ajaxOption) {
+//     alert("ajaxComplete");
+//   });
+//   // регистрирут ф-ю выполн по завершению запроса
+//   //отработает перед отправкой  запроса
 
-  $(document).ajaxComplete(function(event, XHR, ajaxOption){alert('ajaxComplete')})
-  // регистрирут ф-ю выполн по завершению запроса
-  //отработает перед отправкой  запроса
+//   $(document).ajaxSuccess(function (event, XHR, ajaxOption) {
+//     alert("ajaxSuccess");
+//   });
+//   // регистрирут ф-ю выполн при успешном запросе
 
-  $(document).ajaxSuccess(function(event, XHR, ajaxOption){alert('ajaxSuccess')})
-  // регистрирут ф-ю выполн при успешном запросе
+//   $(document).ajaxError(function (event, XHR, ajaxOption) {
+//     alert("ajaxSuccess");
+//   });
+//   // регистрирут ф-ю выполн при неудачном запросе
 
-  $(document).ajaxError(function(event, XHR, ajaxOption){alert('ajaxSuccess')})
-  // регистрирут ф-ю выполн при неудачном запросе
-  
-  $('#btn').click(function(e){
-        e.preventDefault()
-        $('.lds-roller').fadeIn(500, function(){
-          const result=$("#contact-form").serializeArray();
-    
-          const jqXHR = $.get('https://test-users-api.herokuapp.com/users',result, function(data, status, jqXHR){alert('after send')}, 'json' );
-        });
-    });
- 
-})
+//   $("#btn").click(function (e) {
+//     e.preventDefault();
+//     $(".lds-roller").fadeIn(500, function () {
+//       const result = $("#contact-form").serializeArray();
+
+//       const jqXHR = $.get(
+//         "https://test-users-api.herokuapp.com/users",
+//         result,
+//         function (data, status, jqXHR) {
+//           alert("after send");
+//         },
+//         "json"
+//       );
+//     });
+//   });
+// });
 
 // Утилы---------------------------------------------------------------------------
 
 // contains
 function contain() {
-  const elem = document.getElementById('contains');
-  if($.contains(document.body, elem)){
-              // в котором ищем, какой елемент
-    $(elem).css({'color':'red'})
-  } 
-};
+  const elem = document.getElementById("contains");
+  if ($.contains(document.body, elem)) {
+    // в котором ищем, какой елемент
+    $(elem).css({ color: "red" });
+  }
+}
 
 // data
 // function dat() {
@@ -1403,15 +1477,29 @@ function contain() {
 // };
 
 function dat() {
-  const elem = $('.data');
-  const value ={
+  const elem = $(".data");
+  const value = {
     one: 10,
-    two:20
-  }
-  $.data(elem,'dataKey',value)
-      //елемент привязки данных, ключ данных, сохраняемые/ изменяемые данные
-  alert($.data(elem, 'dataKey').one);
-    // елемент привязки данных, ключ данных(третего параметра нет-вернет ).свойство обьекта
+    two: 20,
+  };
+  $.data(elem, "dataKey", value);
+  //елемент привязки данных, ключ данных, сохраняемые/ изменяемые данные
+  alert($.data(elem, "dataKey").one);
+  // елемент привязки данных, ключ данных(третего параметра нет-вернет ).свойство обьекта
+
+  $.data(document.getElementById("data"), "dataName", 100);
+  alert($.data(document.getElementById("data"), "dataName"));
+}
+
+// removeData
+function removeDat() {
+  $.data(document.getElementById("data"), "dataName", 100);
+  alert($.data(document.getElementById("data"), "dataName"));
+  // $.removeData(document.getElementById('data'));
+  //Удалит все данные со всеми именами
+  $.removeData(document.getElementById("data"), "dataName");
+  //Удалит данные только по ключу
+  alert($.data(document.getElementById("data"), "dataName"));
 }
 
 // each
@@ -1420,101 +1508,216 @@ function eachh() {
   // $.each(arr, function(index, value){alert(value)})
   // // массив для перебора, ф-я для каждого елемента
 
-  const obj ={'one':1 , 'two':2, 'three':3}
-  $.each(obj, function(index, value){alert(value + index)})
+  const obj = { one: 1, two: 2, three: 3 };
+  $.each(obj, function (index, value) {
+    alert(value + index);
+  });
   // массив для перебора, ф-я для каждого елемента
-};
+}
 
 // extend
 function exten() {
-  const obj1 ={'one':1 , 'two':2, 'three':{val1:'Hello', val2:'word', val3:'!'}}
-  const obj2 ={'one':100 , 'two':'some text', 'three':{val1:'Ben', val2:'Bob'}}
+  const obj1 = {
+    one: 1,
+    two: 2,
+    three: { val1: "Hello", val2: "word", val3: "!" },
+  };
+  const obj2 = {
+    one: 100,
+    two: "some text",
+    three: { val1: "Ben", val2: "Bob" },
+  };
 
-//  const result = $.extend(obj1, obj2)
-//   //в первый обьект перезапишет/добавит второй
-//   //обьектов сколько угодно
-//   //  в obj1.three перезапишет весь обьект новым
+  //  const result = $.extend(obj1, obj2)
+  //   //в первый обьект перезапишет/добавит второй
+  //   //обьектов сколько угодно
+  //   //  в obj1.three перезапишет весь обьект новым
 
- const result = $.extend(true,obj1, obj2)
+  const result = $.extend(true, obj1, obj2);
   // рекурсивное обьединение в obj1.three.val3 останется
- console.log(result);
- alert(JSON.stringify(result))
-};
+  console.log(result);
+  alert(JSON.stringify(result));
+}
 
 // globalEval
 let someVar = 50;
 function globalEva() {
   let someVar = 05;
   console.log(someVar);
-$.globalEval('alert(someVar) ')
-$.globalEval('someVar= 555;')
-              // скрипт для выполнения
-console.log(someVar);
-$.globalEval('alert(someVar) ')
-console.log(someVar);
-};
-
+  $.globalEval("alert(someVar) ");
+  $.globalEval("someVar= 555;");
+  // скрипт для выполнения
+  console.log(someVar);
+  $.globalEval("alert(someVar) ");
+  console.log(someVar);
+}
 
 // grep
-function gre(){
-  const arr =[1,2,3,4,5,6,7,8,9];
+function gre() {
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   function sortFunction(el, ind) {
-    if(el === 4 || ind === 2){
-      return false
-    };
-    return true
-  };
-  const result =$.grep(arr, sortFunction, true);
+    if (el === 4 || ind === 2) {
+      return false;
+    }
+    return true;
+  }
+  const result = $.grep(arr, sortFunction, true);
   //можно ф-ю внутри     true- вернет массив неудовлетвор условия  false по умолч
   alert(result);
 }
 
 // inArray
-function inArra(){
- const arr =[1,'bob', 'sem']
- alert($.inArray('bob',arr))
-    // что ищем , массив
+function inArra() {
+  const arr = [1, "bob", "sem"];
+  alert($.inArray("bob", arr));
+  // что ищем , массив
 }
 
 // isArray
-function isArra(){
-  const arr =[1,'bob', 'sem']
-  alert($.isArray(arr))
- }
+function isArra() {
+  const arr = [1, "bob", "sem"];
+  alert($.isArray(arr));
+}
 
 //  isEmptyObject
-function isEmptyObjec(){
+function isEmptyObjec() {
   // const arr =[1,'bob', 'sem'];
   // const arr =[];
-  const arr ={};
+  const arr = {};
   // const arr ={'one':1};
-  alert($.isEmptyObject(arr))
- }
+  alert($.isEmptyObject(arr));
+}
 
- //  isFunction
-function isFunctio(){
-  const arr ={};
-   function func(){}
-  alert($.isFunction(func))
- }
+//  isFunction
+function isFunctio() {
+  const arr = {};
+  function func() {}
+  alert($.isFunction(func));
+}
 
- //  isNumeric
-function isNumeri(){
+//  isNumeric
+function isNumeri() {
   // alert($.isNumeric('as'))
   // alert($.isNumeric(10))
-  alert($.isNumeric('10'))
- }
+  alert($.isNumeric("10"));
+}
 
- //  isPlainObject
-function isPlainObjec(){
+//  isPlainObject
+function isPlainObjec() {
   // alert($.isPlainObject({'one':'one'}))
   // alert($.isPlainObject(new Object()))
-  alert($.isPlainObject({}))
- }
+  alert($.isPlainObject({}));
+}
 
-  //  isWindow
-function isWindo(){
+//  isWindow
+function isWindo() {
   // alert($.isWindow({}));
   // alert($.isWindow(document));
   alert($.isWindow(window));
- }
+}
+
+//  makeArray
+function makeArra() {
+  const obj = $("#makeArray").children();
+  console.log(obj.length);
+  // массивоподобный обьект (выборка) нет свойств массива
+  const arr = $.makeArray(obj);
+  //приведем к массиву
+  arr.reverse();
+  //перевернем
+  $(arr).appendTo($("#makeArray"));
+  //добавим назад
+}
+
+//  map
+function mapp() {
+  //  const obj = $('#mapp').children();
+  // массивоподобный обьект (выборка) нет свойств массива
+  //  const arr = $.map(obj, function(el, index){
+  //  //map(массив /выборка ,ф-я для каждого елемента(el елемент html, ind инд)
+  //   if($(el).hasClass('map')){
+  //     return el;
+  //   }
+  //  });
+  //  alert(arr);
+
+  const obj = { one: 1, two: 2 };
+  const result = $.map(obj, function (val, key) {
+    //  //map(обьект ,ф-я для каждого елемента(значение ключа, ключ)
+    console.log(val);
+    console.log(key);
+  });
+}
+
+//  merge
+function merg() {
+  //   const arr1 = [1,2,3];
+  //   const arr2 = [4,5,6];
+  //  alert($.merge(arr1, arr2))
+  // //обьеденит два массива
+
+  const obj1 = $("#merge a");
+  const obj2 = $("#merge p");
+  console.log($.merge(obj1, obj2));
+  // обьеденит две выборки
+}
+
+//  noop
+function noo() {
+  $(".noop").mouseenter($.noop());
+}
+
+// parseJSON
+function parseJSO() {
+  const obj = $.parseJSON('{"name":"David"}');
+  alert(typeof obj);
+}
+
+// parseHTML
+function parseHTM() {
+  const str = "<h3>parseHTML</h3>";
+  const html = $.parseHTML(str);
+  $("#parseHTML").append(html);
+}
+
+// proxy
+function prox() {
+  const obj1 = {
+    name: "User",
+    test: function (event) {
+      alert("User name " + this.name);
+    },
+  };
+  const obj2 = {
+    name: "Admin",
+    test: function (event) {
+      alert("Admin name " + this.name);
+    },
+  };
+  $(".proxy").on("mouseenter", $.proxy(obj2, "test"));
+  // указуем обект использования
+  // $.proxy(значение контекста,имя метода обьекта которая используется как ф-я даного обьекта)
+  // формируем ф-ю на осн. метода обьекта
+  $(".proxy").on("mouseenter", $.proxy(obj2.test, obj2));
+  $(".proxy").on("mouseenter", $.proxy(obj2.test, obj1));
+  // во втором .proxy(метод формирования ф-ии(можно анонимную ф-ю),значение контекста this
+}
+
+// trim
+function tri() {
+  const str = " Some          text                           ";
+  alert($.trim(str));
+}
+
+// now
+function noww() {
+  alert($.now());
+  // секунды от 1 января 1970г епоха Unics
+}
+
+// type
+function typ() {
+  alert($.type({}));
+  alert($.type([]));
+  alert($.type(true));
+}

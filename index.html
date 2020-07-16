@@ -1463,6 +1463,10 @@
                 <h3>.param()</h3>
                 <p>Для автоматического преобразования массива обьектов в строку запроса сервера</p>
               </li>
+              <li class="Callbacks" id="Callbacks">
+                <h3>$.Callbacks()</h3>
+                <p>Для автоматического преобразования массива обьектов в строку запроса сервера</p>
+              </li>
             </ul>
             <h3>Обработчики AJAX событий</h3>
             <ul>
@@ -1494,7 +1498,7 @@
           <div class="ajax-wrap col-md-12 text-center">
             <h2>Утилы</h2>
             <a href="https://api.jquery.com/category/utilities/">Утилы</a>
-            <ul>
+            <ul id="utilities">
               <li>
                 <h3 id="contains">.contains()</h3>
                 <p>Проверяет присутствие елементов внутри других</p>
@@ -1504,6 +1508,11 @@
                 <h3 id="data">.data()</h3>
                 <p>Для хранения и работы с определенными данными привязаных к елементу</p>
                 <a href="#data" onclick="dat()">.data()</a>
+              </li>
+              <li>
+                <h3 id="removeData">.removeData()</h3>
+                <p>Удаляет данные data привязаные к елементу</p>
+                <a href="#removeData" onclick="removeDat()">.removeData()</a>
               </li>
               <li>
                 <h3 id="eachh">.each()</h3>
@@ -1560,8 +1569,56 @@
                 <p>Проверяет окно ли</p>
                 <a href="#isWindow" onclick="isWindo()">.isWindow()</a>
               </li>
-
-
+              <li id="makeArray" class="greenClass">
+                <h3 >.makeArray()</h3>
+                <p>Пиведет выборку к массиву !!! Пример с изменением местоположений тегов!!!</p>
+                <a href="#makeArray" onclick="makeArra()">.makeArray()</a>
+              </li>
+              <li id="mapp">
+                <h3 class="map">.map()</h3>
+                <p class="map">Вызовет ф-ю к каждому елементу массива/каждому елементу обьекта </p>
+                <a href="#mapp" onclick="mapp()">.map()</a>
+              </li>
+              <li id="merge">
+                <h3>.merge()</h3>
+                <p>Сшивает массивы/ выборки</p>
+                <a href="#merge" onclick="merg()">.merge()</a>
+              </li>
+              <li id="noop">
+                <h3>.noop()</h3>
+                <p>Заглушка вместо ф-й ничего не делает, можно обратится</p>
+                <a href="#noop" class="noop greenClass" onclick="noo()">.noop()</a>
+              </li>
+              <li id="parseJSON">
+                <h3>.parseJSON()</h3>
+                <p>Конвертирует строку в обьект</p>
+                <a href="#parseJSON"  onclick="parseJSO()">.parseJSON()</a>
+              </li>
+              <li id="parseHTML">
+                <h3>.parseHTML()</h3>
+                <p>Конвертирует строку в HTML елемент</p>
+                <a href="#parseHTML"  onclick="parseHTM()">.parseHTML()</a>
+              </li>
+              <li id="proxy">
+                <h3 class="greenClass proxy">.proxy()</h3>
+                <p>Ставит на обработчик метод обьекта и привязывает к нему контекст вторго обьекта</p>
+                <a href="#proxy"  onclick="prox()">.proxy()</a>
+              </li>
+              <li id="trim">
+                <h3 class=" trim">.proxy()</h3>
+                <p>Очищает строку от наружных пробелов, табов, переносов строк</p>
+                <a href="#trim"  onclick="tri()">.trim()</a>
+              </li>
+              <li id="now">
+                <h3 class=" now">.now()</h3>
+                <p>Покажет время в секундах от эпохи Unics</p>
+                <a href="#now"  onclick="noww()">.now()</a>
+              </li>
+              <li id="type">
+                <h3 class=" type">.type()</h3>
+                <p>Отобразит тип</p>
+                <a href="#type"  onclick="typ()">.type()</a>
+              </li>
             </ul>
           </div>
         </div>
