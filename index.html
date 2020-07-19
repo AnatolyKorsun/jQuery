@@ -10,73 +10,115 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ranchers&family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
+    <header id="home">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
             <h1>jQuery</h1>
           </div>
+          <div class="navbar-left-btn"><span>...</span></div>
+          <div class="navbar-left">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#selectors">Селекторы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#filters">Фильтры</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#child-filters">Фильтры дочерних елементов</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#form-filters">Фильтры елементов форм</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#attributes">Атрибуты</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#parameters-styles">Параметры и стили</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#manipulation">Манипуляция. Добавление</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#deletion">Манипуляция. Удаление</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#animation">Анимация</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#mouseevent">События мыши</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#keyevent">События клавиатуры</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#formevent">События форм</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#downloadevent">События загрузки стр.</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#browserevent">События браузера</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#methods">Универсальные методы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#selectedmethods">Методы выбраных елементов</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#filter">Методы фильтрации</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#useful">Полезные методы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cyclical">Циклическая обработка</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#ajax">Ajax</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#utiliti">Утилы</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
-    <!-- Подключение -->
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h2>Подключение из сервиса Google</h2>
-            <p>
-              src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-            </p>
-            <a href="https://developers.google.com/speed/libraries?hl=en#jquery"
-              >https://developers.google.com/speed/libraries?hl=en#jquery</a
-            >
-          </div>
-          <div class="col-md-12 text-center">
-            <h2>Локальное подключение сайт jQuery</h2>
-            <p>https://jquery.com/download/</p>
-            <a href="https://jquery.com/download/"
-              >https://jquery.com/download/</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- Вызов jQuery -->
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-left">
+          <div class="col-md-12 text-center">
             <h2>Вызов jQuery</h2>
-            <h3>1-й jQuery() или $()</h3>
-            <p>Вернет елемент или все елементы d виде обьекта</p>
+            <p>jQuery() , $()</p>
             <p>$('.class') селектор по классу</p>
             <p>$('#id') селектор по id</p>
             <p>$('p') селектор по тегу</p>
-            <h4>Елемент у РОДИТЕЛЯ</h4>
-            <p>$('p','.class') => $(елемент, родитель)</p>
-            <h3>2-й Вызов документа $(document)</h3>
-            <p>Ссылка на глобальный документ HTML</p>
+            <p>$('p','.class') - $(елемент, родитель)</p>
             <p>
-              $(document).ready(function(){}) после загрузки документа(скрипт
-              jquery можно в head )
+              $(document).ready(function(){}) 
             </p>
-            <h3>3-й Вызов функции jQuery(function(){})</h3>
-            <p>Ф-я отработает после загрузки в DOM</p>
-            <h3>Убрать $</h3>
-            <p>jQuery.noConflict()</p>
+            <p>jQuery(function(){})</p>
+            <p>jQuery.noConflict()-Убрать $</p>
           </div>
         </div>
       </div>
     </section>
     <!-- Селекторы -->
-    <section>
+    <section id="selectors">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-right">
+          <div class="col-md-12 text-center">
             <h2>Селекторы</h2>
             <a href="https://api.jquery.com/category/selectors/"
               >https://api.jquery.com/category/selectors/</a
@@ -112,10 +154,10 @@
       </div>
     </section>
     <!-- Фильтры -->
-    <section>
+    <section id="filters">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-left">
+          <div class="col-md-12 text-center">
             <h2>Фильтры</h2>
             <ul>
               <li>
@@ -179,10 +221,10 @@
       </div>
     </section>
     <!-- Фильтры дочерних елементов -->
-    <section>
+    <section id="child-filters">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-left">
+          <div class="col-md-12 text-center">
             <h2>Фильтры дочерних елементов</h2>
             <ul>
               <li>
@@ -231,10 +273,10 @@
       </div>
     </section>
     <!-- Фильтры елементов форм -->
-    <section>
+    <section id="form-filters">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-right">
+          <div class="col-md-12 text-center">
             <h2>Фильтры елементов форм</h2>
             <ul>
               <li>
@@ -310,7 +352,7 @@
       </div>
     </section>
     <!-- Работа с атрибутами -->
-    <section>
+    <section id="attributes">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -387,7 +429,7 @@
       </div>
     </section>
     <!-- Работа с параметрами и стилями -->
-    <section>
+    <section id="parameters-styles">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -513,10 +555,10 @@
       </div>
     </section>
     <!-- Манипуляция обьектами Добавление содержимого -->
-    <section>
+    <section id="manipulation">
       <div class="container">
         <div class="row">
-          <div id="manipulation" class="col-md-12 text-left">
+          <div id="manipulation" class="col-md-12 text-center">
             <h2>Манипуляция обьектами Добавление содержимого</h2>
             <a href="https://api.jquery.com/category/manipulation/"
               >https://api.jquery.com/category/manipulation/</a
@@ -611,10 +653,10 @@
       </div>
     </section>
     <!-- Манипуляция обьектами Удаление содержимого -->
-    <section>
+    <section id="deletion">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 text-left">
+          <div class="col-md-12 text-center">
             <h2>Манипуляция обьектами Удаление содержимого</h2>
             <a href="https://api.jquery.com/category/manipulation/"
               >https://api.jquery.com/category/manipulation/</a
@@ -660,7 +702,7 @@
       </div>
     </section>
     <!-- Анимационные еффекты -->
-    <section>
+    <section id="animation">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -761,7 +803,7 @@
       </div>
     </section>
     <!-- События мыши -->
-    <section>
+    <section id="mouseevent">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -870,7 +912,7 @@
       </div>
     </section>
     <!-- События клавиатуры -->
-    <section>
+    <section id="keyevent">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -915,7 +957,7 @@
       </div>
     </section>
     <!-- События форм -->
-    <section>
+    <section id="formevent">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -1000,7 +1042,7 @@
       </div>
     </section>
     <!-- События загрузки страницы -->
-    <section>
+    <section id="downloadevent">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -1032,7 +1074,7 @@
       </div>
     </section>
     <!-- События браузера -->
-    <section>
+    <section id="browserevent">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -1090,29 +1132,15 @@
       </div>
     </section>
     <!-- Универсальные методы -->
-    <section>
+    <section id="methods">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
             <h2>:) Универсальные методы</h2>
             <ul>
               <li>
-                <h3>
-                  Scroll top
-                </h3>
-                <div
-                  style="
-                    left: 70%;
-                    top: 70%;
-                    width: 100px;
-                    height: 10px;
-                    display: none;
-                    position: fixed;
-                  "
-                  class="scrollTop"
-                >
-                  ScrollTop Up
-                </div>
+                <h3>Scroll top</h3>
+                <a href="#home" class="scrolllTop">^</a>
               </li>
 
               <li>
@@ -1181,7 +1209,7 @@
       </div>
     </section>
     <!-- Методы выбраных елементов -->
-    <section>
+    <section id="selectedmethods">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -1299,7 +1327,7 @@
       </div>
     </section>
     <!-- Методы фильтрации -->
-    <section>
+    <section id="filter">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -1357,7 +1385,7 @@
       </div>
     </section>
      <!-- Полезные методы -->
-    <section>
+    <section id="useful">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -1390,7 +1418,7 @@
       </div>
     </section>
     <!-- Методы циклической обработки выборки -->
-    <section>
+    <section id="cyclical">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -1412,15 +1440,10 @@
       </div>
     </section>
     <!-- Ajax -->
-    <section>
+    <section id="ajax">
       <div class="container">
         <div class="row">
           <div class="ajax-wrap col-md-12 text-center">
-            <h2>Ajax</h2>
-            <a href="https://api.jquery.com/category/ajax/">Ajax методы</a>
-            <img src="./images/synchron.jpg" width="90%"  alt=" ">
-            <h2>Асинхронный запрос</h2>
-            <img src="./images/asynchron.jpg" width="90%"  alt=" ">
             <!-- Spiner loading -->
             <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             <h3 id="message"> Ajax</h3>
@@ -1444,23 +1467,23 @@
                 <p>вынос всех методов с запроса ajax. в ajax ост только data</p>
               </li>
               <li class="get" id="get">
-                <h3>$.get('server adress',result, function(data, status, jqXHR){}, 'json' );</h3>
+                <h3>$.get()</h3>
                 <p>Запрос на сервер методом get без  перезагрузки стр.</p>
               </li>
               <li class="post" id="post">
-                <h3>$.post('server adress',result, function(data, status, jqXHR){}, 'json');</h3>
+                <h3>$.post()</h3>
                 <p>Запрос на сервер методом POST без перезагрузки стр.</p>
               </li>
               <li class="getJSON" id="getJSON">
-                <h3>$.getJSON('server adress',result, function(data, status, jqXHR){});</h3>
+                <h3>$.getJSON()</h3>
                 <p>Запрос на сервер методом get ожидая JSON без  перезагрузки стр..</p>
               </li>
               <li class="getScript" id="getScript">
-                <h3>$.getScript('server adress',result, function(data, status, jqXHR){});</h3>
+                <h3>$.getScript()</h3>
                 <p>Запрос на сервер методом get ожидая JSON без  перезагрузки стр..</p>
               </li>
               <li class="param" id="param">
-                <h3>.param()</h3>
+                <h3>$.param()</h3>
                 <p>Для автоматического преобразования массива обьектов в строку запроса сервера</p>
               </li>
               <li class="Callbacks" id="Callbacks">
@@ -1492,7 +1515,7 @@
       </div>
     </section>
     <!-- Утилы -->
-    <section>
+    <section id="utiliti">
       <div class="container">
         <div class="row">
           <div class="ajax-wrap col-md-12 text-center">
@@ -1500,122 +1523,122 @@
             <a href="https://api.jquery.com/category/utilities/">Утилы</a>
             <ul id="utilities">
               <li>
-                <h3 id="contains">.contains()</h3>
+                <h3 id="contains">$.contains()</h3>
                 <p>Проверяет присутствие елементов внутри других</p>
                 <a href="#contains" onclick="contain()">.contains()</a>
               </li>
               <li>
-                <h3 id="data">.data()</h3>
+                <h3 id="data">$.data()</h3>
                 <p>Для хранения и работы с определенными данными привязаных к елементу</p>
                 <a href="#data" onclick="dat()">.data()</a>
               </li>
               <li>
-                <h3 id="removeData">.removeData()</h3>
+                <h3 id="removeData">$.removeData()</h3>
                 <p>Удаляет данные data привязаные к елементу</p>
                 <a href="#removeData" onclick="removeDat()">.removeData()</a>
               </li>
               <li>
-                <h3 id="eachh">.each()</h3>
+                <h3 id="eachh">$.each()</h3>
                 <p>Для работы с обьектами и массивами. не .each() для работы с каждым елементом выборки</p>
                 <a href="#eachh" onclick="eachh()">.each()</a>
               </li> 
               <li>
-                <h3 id="extend">.extend()</h3>
+                <h3 id="extend">$.extend()</h3>
                 <p>Для соединения двух обьектов. если у второго такой же ключ, перезапишет новое значение в первый обьект</p>
                 <a href="#extend" onclick="exten()">.extend()</a>
               </li>
               <li>
-                <h3 id="globalEval">.globalEval()</h3>
+                <h3 id="globalEval">$.globalEval()</h3>
                 <p>Обращается к глобальной переменной</p>
                 <a href="#globalEval" onclick="globalEva()">.globalEval()</a>
               </li>
               <li>
-                <h3 id="grep">.grep()</h3>
+                <h3 id="grep">$.grep()</h3>
                 <p>Берет массив и ф-ю сортировки, выдает отсортированный массив</p>
                 <a href="#grep" onclick="gre()">.grep()</a>
               </li>
               <li>
-                <h3 id="inArray">.inArray()</h3>
+                <h3 id="inArray">$.inArray()</h3>
                 <p>Проверяет нахождение елемента в массиве. Вернет индекс елемента или -1 еси нет</p>
                 <a href="#inArray" onclick="inArra()">.inArray()</a>
               </li>
               <li>
-                <h3 id="isArray">.isArray()</h3>
+                <h3 id="isArray">$.isArray()</h3>
                 <p>Проверяет елемент массив?</p>
                 <a href="#isArray" onclick="isArra()">.isArray()</a>
               </li>
               <li>
-                <h3 id="isEmptyObject">.isEmptyObject()</h3>
+                <h3 id="isEmptyObject">$.isEmptyObject()</h3>
                 <p>Проверяет пустой ли массив или обьект</p>
                 <a href="#isEmptyObject" onclick="isEmptyObjec()">.isEmptyObject()</a>
               </li>
               <li>
-                <h3 id="isFunction">.isFunction()</h3>
+                <h3 id="isFunction">$.isFunction()</h3>
                 <p>Проверяет функция ли</p>
                 <a href="#isFunction" onclick="isFunctio()">.isFunction()</a>
               </li>
               <li>
-                <h3 id="isNumeric">.isNumeric()</h3>
+                <h3 id="isNumeric">$.isNumeric()</h3>
                 <p>Проверяет число ли / можно ли привести к числу</p>
                 <a href="#isNumeric" onclick="isNumeri()">.isNumeric()</a>
               </li>
               <li>
-                <h3 id="isPlainObject">.isPlainObject()</h3>
+                <h3 id="isPlainObject">$.isPlainObject()</h3>
                 <p>Проверяет обьект ли</p>
                 <a href="#isPlainObject" onclick="isPlainObjec()">.isPlainObject()</a>
               </li>
               <li>
-                <h3 id="isWindow">.isWindow()</h3>
+                <h3 id="isWindow">$.isWindow()</h3>
                 <p>Проверяет окно ли</p>
                 <a href="#isWindow" onclick="isWindo()">.isWindow()</a>
               </li>
               <li id="makeArray" class="greenClass">
-                <h3 >.makeArray()</h3>
+                <h3 >$.makeArray()</h3>
                 <p>Пиведет выборку к массиву !!! Пример с изменением местоположений тегов!!!</p>
                 <a href="#makeArray" onclick="makeArra()">.makeArray()</a>
               </li>
               <li id="mapp">
-                <h3 class="map">.map()</h3>
+                <h3 class="map">$.map()</h3>
                 <p class="map">Вызовет ф-ю к каждому елементу массива/каждому елементу обьекта </p>
                 <a href="#mapp" onclick="mapp()">.map()</a>
               </li>
               <li id="merge">
-                <h3>.merge()</h3>
+                <h3>$.merge()</h3>
                 <p>Сшивает массивы/ выборки</p>
                 <a href="#merge" onclick="merg()">.merge()</a>
               </li>
               <li id="noop">
-                <h3>.noop()</h3>
+                <h3>$.noop()</h3>
                 <p>Заглушка вместо ф-й ничего не делает, можно обратится</p>
                 <a href="#noop" class="noop greenClass" onclick="noo()">.noop()</a>
               </li>
               <li id="parseJSON">
-                <h3>.parseJSON()</h3>
+                <h3>$.parseJSON()</h3>
                 <p>Конвертирует строку в обьект</p>
                 <a href="#parseJSON"  onclick="parseJSO()">.parseJSON()</a>
               </li>
               <li id="parseHTML">
-                <h3>.parseHTML()</h3>
+                <h3>$.parseHTML()</h3>
                 <p>Конвертирует строку в HTML елемент</p>
                 <a href="#parseHTML"  onclick="parseHTM()">.parseHTML()</a>
               </li>
               <li id="proxy">
-                <h3 class="greenClass proxy">.proxy()</h3>
+                <h3 class="greenClass proxy">$.proxy()</h3>
                 <p>Ставит на обработчик метод обьекта и привязывает к нему контекст вторго обьекта</p>
                 <a href="#proxy"  onclick="prox()">.proxy()</a>
               </li>
               <li id="trim">
-                <h3 class=" trim">.proxy()</h3>
+                <h3 class=" trim">$.trim()</h3>
                 <p>Очищает строку от наружных пробелов, табов, переносов строк</p>
                 <a href="#trim"  onclick="tri()">.trim()</a>
               </li>
               <li id="now">
-                <h3 class=" now">.now()</h3>
+                <h3 class=" now">$.now()</h3>
                 <p>Покажет время в секундах от эпохи Unics</p>
                 <a href="#now"  onclick="noww()">.now()</a>
               </li>
               <li id="type">
-                <h3 class=" type">.type()</h3>
+                <h3 class=" type">$.type()</h3>
                 <p>Отобразит тип</p>
                 <a href="#type"  onclick="typ()">.type()</a>
               </li>

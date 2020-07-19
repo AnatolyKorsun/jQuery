@@ -39,10 +39,10 @@ $("[href]").css({ "font-size": "30px" });
 
 // $('input').css({'color':'red'})
 
-// jQuery(function($){
-//     $('input[name="name"]').focus()
-//     $('input:focus').css({'color':'red'});;
-// })
+jQuery(function($){
+    $('input[name="name"]').focus()
+    $('input:focus').css({'color':'red'});;
+})
 
 // $("*:header").css({'color':'red'});
 
@@ -822,14 +822,14 @@ function scrol() {
   scrol.scroll($(window).scrollTop());
 }
 
-$(window).scrollTop(function () {
-  if ($(this).scrollTop() > 500) {
-    $(".scrollTop").fadeIn(500);
-  }
-});
-$(".scrollTop").click(function () {
-  $(window).scrollTop(0);
-});
+// $(window).scrollTop(function () {
+//   if ($(this).scrollTop() > 500) {
+//     $(".scrolllTop").fadeIn(500);
+//   }
+// });
+// $(".scrolllTop").click(function () {
+//   $(window).scrollTop(0);
+// });
 
 // Универсальные методы--------------------------------------------------------
 
@@ -1348,7 +1348,7 @@ function endd() {
 //   });
 // });
 
-//Calbacks--------------------------------------------------------------------
+//Callbacks--------------------------------------------------------------------
  $(function($){
     $('#btn').click(function(e){
       e.preventDefault()
@@ -1721,3 +1721,71 @@ function typ() {
   alert($.type([]));
   alert($.type(true));
 }
+
+
+// this page script-------------------------------------------------
+
+// navbar-left
+$('.navbar-left-btn').mouseenter(function(){
+  $('.navbar-left').fadeIn(700).mouseleave(function(){
+    $('.navbar-left').fadeOut(700);
+  });
+});
+
+// Smooth scrolling
+$('a[href*="#"]')
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1300, function() {
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { 
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); 
+            $target.focus(); 
+          };
+        });
+      }
+    }
+  });
+
+  // Scroll top btn
+  $(window).scrollTop(function () {
+      if ($(this).scrollTop() > 500) {
+        $(".scrolllTop").fadeIn(500);
+      }
+    });
+
+    // Highlight menu-item on scroll
+$(document).ready(function(){
+  'use strict';
+$(window).scroll(function(){
+  'use strict';
+  $("section").each(function(){
+  'use strict';
+    let bb = $(this).attr("id");
+    let hei = $(this).outerHeight();
+    let grttop = $(this).offset().top -100;
+
+    if( $(window).scrollTop() > grttop && $(window).scrollTop() < grttop + hei) {
+      $(".nav-link[href='#" + bb +"']").addClass("active");
+    }
+    else {
+      $(".nav-link[href='#" + bb +"']").removeClass("active");
+    }
+  });
+});
+});

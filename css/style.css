@@ -1,20 +1,97 @@
+a:hover{
+  text-decoration: none;
+}
 section{
-    background-color: rgb(221, 218, 218);
-    padding: 10px;
     margin-bottom: 30px;
+}
+section li{
+    border-radius: 25px;
+    padding: 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background: #ada996; 
+    background: -webkit-linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); 
+    background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); 
+}
+.scrolllTop{
+  position: fixed;
+  display: none;
+  left: 90%;
+  top: 90%;
+  width:40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: 100;
+  cursor: pointer;
 }
 
 .redClass{
     border: 1px solid red;
+    border-radius: 5px;
 }
 
 .greenClass{
     border: 1px solid green;
+    border-radius: 5px;
+
 }
 
-li{
-    margin-bottom: 50px;
+h1, h2, h3, h4{
+  font-family: 'Ranchers', cursive;
 }
+
+p{
+  font-size: 24px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.nav-link{
+  font-family: 'Lobster', cursive;
+  /* font-size: 15px !important; */
+}
+.nav-item{
+  /* line-height: 20px !important; */
+}
+
+
+
+.navbar-left-btn{
+  position: fixed;
+  width: 50px;
+  height: 80px;
+  top:50%;
+  left:0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.navbar-left-btn span{
+  font-size: 50px;
+}
+
+.navbar-left{
+  position: fixed;
+  display: none;
+  height: 100vh;
+  padding: 20px;
+  left:0;
+  background-color:black;
+  z-index: 2;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.nav-item a{
+  font-size: 15px !important;
+  padding: 5px 0 !important;
+}
+.active{
+  color:yellow;
+}
+
 /* Анимационные еффекты-------------------------------------------------------------- */
 
 /* slider */
