@@ -1726,7 +1726,7 @@ function typ() {
 // this page script-------------------------------------------------
 
 // navbar-left
-$('.navbar-left-btn').mouseenter(function(){
+$('.navbar-left-btn').click(function(){
   $('.navbar-left').fadeIn(700).mouseleave(function(){
     $('.navbar-left').fadeOut(700);
   });
@@ -1789,3 +1789,13 @@ $(window).scroll(function(){
   });
 });
 });
+
+//  location reload code jQuery
+$(document).ready(function(){
+  $('.codejq').click(function(){
+    var url = "https://github.com/AnatolyKorsun/jQuery/blob/master/js/index.js";
+    $(location).attr('href',url);
+  });
+});
+
+

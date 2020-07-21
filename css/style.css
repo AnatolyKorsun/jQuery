@@ -13,6 +13,31 @@ section li{
     background: -webkit-linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); 
     background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); 
 }
+
+.redClass{
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+.greenClass{
+  border: 1px solid green;
+  border-radius: 5px;
+
+}
+
+h1, h2, h3, h4{
+font-family: 'Ranchers', cursive;
+}
+
+p{
+font-size: 24px;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.active{
+  color:yellow;
+}
+/* .scrolllTop btn ---------------------------------------*/
 .scrolllTop{
   position: fixed;
   display: none;
@@ -26,35 +51,21 @@ section li{
   cursor: pointer;
 }
 
-.redClass{
-    border: 1px solid red;
-    border-radius: 5px;
+
+.codejq{
+  position: fixed;
+  top:90%;
+  left:50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 100;
+  cursor: pointer;
 }
-
-.greenClass{
-    border: 1px solid green;
-    border-radius: 5px;
-
-}
-
-h1, h2, h3, h4{
+/* Left navbar------------------------------------------- */
+.nav-link{
   font-family: 'Ranchers', cursive;
 }
-
-p{
-  font-size: 24px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-}
-
-.nav-link{
-  font-family: 'Lobster', cursive;
-  /* font-size: 15px !important; */
-}
-.nav-item{
-  /* line-height: 20px !important; */
-}
-
-
 
 .navbar-left-btn{
   position: fixed;
@@ -88,13 +99,10 @@ p{
   font-size: 15px !important;
   padding: 5px 0 !important;
 }
-.active{
-  color:yellow;
-}
 
-/* Анимационные еффекты-------------------------------------------------------------- */
 
-/* slider */
+
+/* slider----------------------------------------------- */
 .slider-wrap{
     position: relative;
     left:0;
